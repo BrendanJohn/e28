@@ -1,3 +1,3 @@
 function submit() {
-    alert("clicked");   
+    alert("selection submitted");   
   }
