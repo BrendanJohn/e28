@@ -32,9 +32,10 @@ let i = 0;
 
 //submit button
 function submit() {
-	let selection = this.findSelection();  
+	let selection = this.findSelection();
+	let computerSelection = this.findComputerSelection();
 	if (selection) {
-		alert(selection + " submitted");   
+		alert(selection + " submitted versus " + computerSelection);   
 	}
 	else {
 		alert("please choose one");   		
@@ -49,5 +50,11 @@ function findSelection() {
         return choices[i].value;
       }
     }   
+};
+
+//make a selection for the computer player
+function findComputerSelection() {
+	let randomItem = choices[Math.floor(Math.random()*choices.length)];
+	return randomItem.value;
 };
 </script>
