@@ -17,7 +17,23 @@
 			<input type="radio" id="scissors" name="selection" value="scissors">
 			<label for="scissors">Scissors</label>
 		</form>
+		</br>
 		<input type="button" onclick=submit() value="Submit">
+	</div>
+	<div class="center">
+		<h1>Outcome</h1>
+		<table>
+			<tr>
+			  <th>Player Choice</th>
+			  <th>Computer Choice</th>
+			  <th>Winner</th>
+			</tr>
+			<tr>
+			  <td id="playerSelection"></td>
+			  <td id="computerSelection"></td>
+			  <td id="outcome"></td>
+			</tr>
+		  </table>
 	</div>
 </body>
 </html>
@@ -32,16 +48,16 @@ let i = 0;
 
 //submit button
 function submit() {
-	let selection = this.findSelection();
+	let playerSelection = this.findSelection();
 	let computerSelection = this.findComputerSelection();
-	if (selection) {
-		alert(selection + " submitted versus " + computerSelection);   
+	if (playerSelection) {
+		let outcome = this.rockPaperScissors(playerSelection, computerSelection)
+		this.updateWinnersTable(playerSelection, computerSelection, outcome);  
 	}
 	else {
 		alert("please choose one");   		
 	}
 };
-
 
 //find the users choice of rock, paper, or scissors
 function findSelection() {
@@ -56,5 +72,21 @@ function findSelection() {
 function findComputerSelection() {
 	let randomItem = choices[Math.floor(Math.random()*choices.length)];
 	return randomItem.value;
+};
+
+//determine the outcome of the game
+function rockPaperScissors(playerSelection, computerSelection) {
+	let winner = '';
+	if (playerSelection == computerSelection) {
+		winner = 'tie';
+	}
+	return winner;
+};
+
+//update the game table
+function updateWinnersTable(playerSelection, computerSelection, outcome) {
+	document.getElementById('playerSelection').innerHTML = playerSelection;
+	document.getElementById('computerSelection').innerHTML = computerSelection;
+	document.getElementById('outcome').innerHTML = outcome;
 };
 </script>
