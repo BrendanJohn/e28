@@ -1,8 +1,10 @@
 .center {
     margin: auto;
     width: 16%;
-    border: 5px solid green;
+    border: 5px solid blue;
     padding: 30px;
+    text-align: center;
+    border-radius: 25px;
   }
 
   table {
@@ -20,3 +22,12 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+#winner {
+  font-weight: bold;
+  color: green;
+}
+
+.submitForm {
+  text-align: left;
+}
