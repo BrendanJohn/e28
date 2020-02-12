@@ -3,7 +3,6 @@
 <head>
 	<title>Rock Paper Scissors</title>
 	<meta charset='utf-8'>
-	<script type="text/javascript" src="script.js"></script>	
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -12,13 +11,43 @@
 		<form>
 			<p>Please select one:</p>
 			<input type="radio" id="rock" name="selection" value="rock">
-			<label for="male">Rock</label><br>
+			<label for="rock">Rock</label><br>
 			<input type="radio" id="paper" name="selection" value="paper">
-			<label for="female">Paper</label><br>
+			<label for="paper">Paper</label><br>
 			<input type="radio" id="scissors" name="selection" value="scissors">
-			<label for="other">Scissors</label>
+			<label for="scissors">Scissors</label>
 		</form>
 		<input type="button" onclick=submit() value="Submit">
 	</div>
 </body>
 </html>
+<script>
+
+let rock = document.getElementById('rock');
+let paper = document.getElementById('paper');
+let scissors = document.getElementById('scissors');
+let choices = [];
+choices.push(rock, paper, scissors);
+let i = 0;
+
+//submit button
+function submit() {
+	let selection = this.findSelection();  
+	if (selection) {
+		alert(selection + " submitted");   
+	}
+	else {
+		alert("please choose one");   		
+	}
+};
+
+
+//find the users choice of rock, paper, or scissors
+function findSelection() {
+    for (i = 0; i < choices.length; i++) {
+      if (choices[i].checked == true) {
+        return choices[i].value;
+      }
+    }   
+};
+</script>
