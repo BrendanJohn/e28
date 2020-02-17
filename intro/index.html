@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Week 3 -Vue.js Intro</title>
+    <link rel="stylesheet" href="css/screen.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+      <style>
+          [v-cloak] {
+            display: none
+        }
+      </style>
+    <div id="app" v-cloak>
+        <label>Whats your name?
+            <input type='text' v-model='playerName'>
+        </label> 
+
+        <p v-if='playerName != ""'>
+            Player: {{playerName}}
+        </p>
+
+        <div>
+            <h2>Shopping List</h2>
+            <label>Item:
+                <input type='text' v-model='item'>
+            </label>
+                <button v-on:click='items.push(item)'>Add</button>
+            <ul>
+                <p v-if='items.length < 1'>
+                    <i>You have no items in you list
+                </p>
+                <li v-for='thisItem in items'>{{thisItem}}</li>
+            </ul>
+        </div>
+
+    </div>  
+  </body>
+</html>
