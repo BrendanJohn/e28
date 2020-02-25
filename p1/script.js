@@ -1,8 +1,9 @@
     let app =  new Vue ({
         el: '#app',
         data: {
-            playerName: '',
+Z
             items: [],
-            item: null
+            item: null,
+            testArray: ['a','b','c']
         }
     })
