@@ -13,37 +13,10 @@
             display: none
         }
       </style>
-    <div id="app" v-cloak>
-        <label>Whats your name?
-            <input type='text' v-model='playerName'>
-        </label> 
-
-        <p v-if='playerName != ""'>
-            Player: {{playerName}}
-        </p>
-
-        <p>
-            testArray: {{testArray}}
-        </p>
-
-        <div>
-            <h2>Shopping List</h2>
-            <label>Item:
-                <input type='text' v-model='item'>
-            </label>
-                <button v-on:click='items.push(item)'>Add</button>
-            <ul>
-                <p v-if='items.length < 1'>
-                    <i>You have no items in you list
-                </p>
-                <li v-for='thisItem in items'>{{thisItem}}</li>
-            </ul>
-        </div>
-        <p>testing:</p>
-        <div v-if='true'>A</div>
-        <div v-if='false'>B</div>
-        <div v-show='true'>C</div>
-        <div v-show='false'>D</div>
-    </div>  
+      <h1>Week 5 Examples</h1>
+      <div id="app" v-cloak>
+          <label for 'answer'>What is {{ randomNumber1 }} + {{ randomNumber2 }}?</label>
+          <input type='text' id='answer' v-model='answer v-on:keyup.enter'='submitAnswer()'>
+      </div>  
   </body>
 </html>
