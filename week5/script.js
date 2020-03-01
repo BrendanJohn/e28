@@ -4,6 +4,8 @@
             randomNumber1: Math.floor((Math.random() *10) + 1),
             randomNumber2: Math.floor((Math.random() *10) + 1),
             answer: '',
+            imageSource: '',
+            imageAlt: ''
         },
         methods: {
             submitanswer: function () {
