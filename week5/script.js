@@ -5,7 +5,9 @@
             randomNumber2: Math.floor((Math.random() *10) + 1),
             answer: '',
             imageSource: '',
-            imageAlt: ''
+            imageAlt: '',
+            feedback: '',
+            correct: null
         },
         methods: {
             submitAnswer: function () {
@@ -14,9 +16,13 @@
                 if (this.answer == correctAnswer) {
                     this.imageSource = 'images/happy.png'
                     this.imageAlt = 'Happy face'
+                    this.feedback = 'You got it right'
+                    this.correct = true
                 } else {
                     this.imageSource = 'images/sad.jpg'
                     this.imageAlt = 'Frowny face'
+                    this.feedback = 'Try again..'
+                    this.correct = false
                 }
             }
         }
