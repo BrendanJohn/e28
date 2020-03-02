@@ -8,8 +8,16 @@
             imageAlt: ''
         },
         methods: {
-            submitanswer: function () {
-                console.log('Submit answer...');
+            submitAnswer: function () {
+                let correctAnswer = this.randomNumber1 + this.randomNumber2;
+
+                if (this.answer == correctAnswer) {
+                    this.imageSource = 'images/happy.png'
+                    this.imageAlt = 'Happy face'
+                } else {
+                    this.imageSource = 'images/sad.jpg'
+                    this.imageAlt = 'Frowny face'
+                }
             }
         }
     })
