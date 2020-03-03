@@ -7,7 +7,11 @@
             imageSource: '',
             imageAlt: '',
             feedback: '',
-            correct: null
+            correct: null,
+            showHint: false,
+            statements: [],
+            difficultyLevel: 'easy',
+            level: ''
         },
         methods: {
             submitAnswer: function () {
