@@ -38,7 +38,7 @@
         <input type='radio' value='hard' v-model='difficultyLevel'>
 
           <label for='answer'>What is {{ randomNumber1 }} + {{ randomNumber2 }}?</label>
-          <input type='text' id='answer' v-model='answer' v-on:keyup.enter='submitAnswer()'>
+          <input type='text' id='answer' v-model.number.trim='answer' v-on:keyup.enter='submitAnswer()'>
 
          <label>
             <input type='checkbox' v-model='statements' value='oddNumber'>
