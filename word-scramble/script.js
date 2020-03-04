@@ -10,7 +10,13 @@ let app =  new Vue ({
         correct: false,
         feedback: '',
         showGame: false,
-        showResult: false
+        showResult: false,
+        words: [
+            ['apple', 'Sometimes red, sometimes delicious'],
+            ['washington', 'Rushmore’s left edge'],
+            ['pumpkin', 'Halloween’s favorite fruit'],
+            ['football', 'Play with your hands or feet, depending on your location']
+        ]
     },
     methods: {
         submitAnswer: function () {
@@ -27,7 +33,6 @@ let app =  new Vue ({
         submitNameAndPlay: function () {
             this.showGame = true;
         },
-
         reset: function () {
             this.showGame = false;
             this.showResult = false;
@@ -35,10 +40,14 @@ let app =  new Vue ({
             this.playerName = '';
             this.feedback = '';
             this.correct = false;
+        },
+        getRandomWord: function () {
+            return this.words[Math.floor(Math.random() * this.words.length)]
         }
     },
     mounted: function () {
-        console.log('The app has been mounted');
+        this.mysteryWord = this.getRandomWord;
+        alert('The app has been mounted');
     },
     computed: {
         correctAnswer: function () {
