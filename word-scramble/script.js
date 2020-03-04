@@ -34,7 +34,7 @@ let app =  new Vue ({
             this.showGame = true;
         },
         reset: function () {
-            this.showGame = false;
+            this.showGame = 'false';
             this.showResult = false;
             this.guess = '';
             this.playerName = '';
@@ -42,12 +42,12 @@ let app =  new Vue ({
             this.correct = false;
         },
         getRandomWord: function () {
-            return this.words[Math.floor(Math.random() * this.words.length)]
+            return this.words[Math.floor(Math.random() * this.words.length)][0]
         }
     },
     mounted: function () {
-        this.mysteryWord = this.getRandomWord;
-        alert('The app has been mounted');
+        this.mysteryWord = this.getRandomWord();
+        this.showGame = 'false';
     },
     computed: {
         correctAnswer: function () {

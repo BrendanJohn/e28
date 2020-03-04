@@ -16,21 +16,21 @@
     <div id="app" v-cloak>
         <h1>Word Scramble</h1>
         <label>Enter your player name:
-            <input type='text' v-model='playerName'>
-            <input type='button' value='Lets play' v-on:click='submitNameAndPlay'>
+            <input type="text" v-model="playerName">
+            <input type="button" value="Lets play" v-on:click="submitNameAndPlay">
         </label> 
 
-        <p v-if='showGame'>
-            Game on, {{playerName}}!
+        <div v-if="showGame == true">
+          <p>Game on, {{playerName}}!</p>
 
-            Your mystery word is: {{mysteryWord}}
+          <p>Your mystery word is: {{mysteryWord}}</p>
 
-            Hint:  {{hint}}
+          <P>Hint:  {{hint}}</P>
 
-            Your guess: <input type='button' value='Lets play' v-on:click='submitAnswer'>
-        </p>
-        <p v-if='showResult'>
-            {{feedback}} <input type='button' value='Play again' v-on:click='reset'>
+            <P>Your guess: <input type="button" value="Lets play" v-on:click="submitAnswer"></P>
+        </div>
+        <p v-if="showResult">
+            {{feedback}} <input type="button" value="Play again" v-on:click="reset">
         </p>
     </div>  
   </body>
