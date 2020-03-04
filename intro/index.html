@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Week 3 -Vue.js Intro</title>
-    <link rel="stylesheet" href="css/screen.css" type="text/css" />
+    <title>Week 4 -Vue.js Intro</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
     <script src="script.js" defer></script>
   </head>
@@ -14,25 +13,23 @@
         }
       </style>
     <div id="app" v-cloak>
-        <label>Whats your name?
-            <input type='text' v-model='playerName'>
-        </label> 
-
-        <p v-if='playerName != ""'>
-            Player: {{playerName}}
-        </p>
-
         <div>
             <h2>Shopping List</h2>
-            <label>Item:
-                <input type='text' v-model='item'>
+            <label>Qty:
+                <input type='text' v-model.number='quantity' type='number'>
             </label>
-                <button v-on:click='items.push(item)'>Add</button>
+            <label>Item:
+                <input type='text' v-model='item' @keyup.enter='submitItemAndQuantity'>
+            </label>
+                <button v-on:click='submitItemAndQuantity'>Add</button>
             <ul>
-                <p v-if='items.length < 1'>
-                    <i>You have no items in you list
+                <p v-if='totalCount == 0'>
+                    <i>You have no items in you list</i>
                 </p>
-                <li v-for='thisItem in items'>{{thisItem}}</li>
+                <p v-else>
+                    Total item count: {{totalCount}}
+                </p>
+                <li v-for='thisItem in items'>{{thisItem.count}} x {{thisItem.name}}</li>
             </ul>
         </div>
 
