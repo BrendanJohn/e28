@@ -1,8 +1,8 @@
     let app =  new Vue ({
         el: '#app',
         data: {
-            randomNumber1: Math.floor((Math.random() *10) + 1),
-            randomNumber2: Math.floor((Math.random() *10) + 1),
+            randomNumber1: null,
+            randomNumber2: null,
             answer: '',
             imageSource: '',
             imageAlt: '',
@@ -15,9 +15,7 @@
         },
         methods: {
             submitAnswer: function () {
-                let correctAnswer = this.randomNumber1 + this.randomNumber2;
-
-                if (this.answer == correctAnswer) {
+                if (this.answer == this.correctAnswer) {
                     this.imageSource = 'images/happy.png'
                     this.imageAlt = 'Happy face'
                     this.feedback = 'You got it right'
@@ -28,6 +26,20 @@
                     this.feedback = 'Try again..'
                     this.correct = false
                 }
+            },
+            getRandomNumber: function () {
+                return Math.floor((Math.random() *10) + 1);
+            }
+             
+        },
+        mounted: function () {
+            alert('The app has been mounted');
+            this.randomNumber1 = this.getRandomNumber;
+            this.randomNumber2 = this.getRandomNumber;
+        },
+        computed: {
+            correctAnswer: function () {
+                return this.randomNumber1 + this.randomNumber2;
             }
         }
     })
