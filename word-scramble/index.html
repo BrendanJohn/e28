@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>p1</title>
+    <title>Word Scramble</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
     <script src="script.js" defer></script>
@@ -14,36 +14,24 @@
         }
       </style>
     <div id="app" v-cloak>
-        <label>Whats your name?
+        <h1>Word Scramble</h1>
+        <label>Enter your player name:
             <input type='text' v-model='playerName'>
+            <input type='button' value='Lets play' v-on:click='submitNameAndPlay'>
         </label> 
 
-        <p v-if='playerName != ""'>
-            Player: {{playerName}}
-        </p>
+        <p v-if='showGame'>
+            Game on, {{playerName}}!
 
-        <p>
-            testArray: {{testArray}}
-        </p>
+            Your mystery word is: {{mysteryWord}}
 
-        <div>
-            <h2>Shopping List</h2>
-            <label>Item:
-                <input type='text' v-model='item'>
-            </label>
-                <button v-on:click='items.push(item)'>Add</button>
-            <ul>
-                <p v-if='items.length < 1'>
-                    <i>You have no items in you list
-                </p>
-                <li v-for='thisItem in items'>{{thisItem}}</li>
-            </ul>
-        </div>
-        <p>testing:</p>
-        <div v-if='true'>A</div>
-        <div v-if='false'>B</div>
-        <div v-show='true'>C</div>
-        <div v-show='false'>D</div>
+            Hint:  {{hint}}
+
+            Your guess: <input type='button' value='Lets play' v-on:click='submitAnswer'>
+        </p>
+        <p v-if='showResult'>
+            {{feedback}} <input type='button' value='Play again' v-on:click='reset'>
+        </p>
     </div>  
   </body>
 </html>
