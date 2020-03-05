@@ -2,14 +2,15 @@ let app =  new Vue ({
     el: '#app',
     data: {
         mysteryWord: '',
+        shuffledWord: '',
         guess: '',
-        showHint: true,
         playerName: '',
         hint: '',
         correct: false,
         feedback: '',
         showGame: false,
         showResult: false,
+        lastWord: '',
         words: [
             ['apple', 'Sometimes red, sometimes delicious'],
             ['washington', 'Rushmore’s left edge'],
@@ -29,7 +30,10 @@ let app =  new Vue ({
             }
         },
         submitNameAndPlay: function () {
+            this.mysteryWord = this.getRandomWord();
             this.showGame = true;
+            this.shuffledWord = this.shuffleMysteryWord;
+            this.hint = this.words.find(obj => obj[0] == this.mysteryWord)[1];  
         },
         reset: function () {
             this.showGame = 'false';
@@ -38,19 +42,18 @@ let app =  new Vue ({
             this.playerName = '';
             this.feedback = '';
             this.correct = false;
+            this.lastWord = this.mysteryWord;
         },
         getRandomWord: function () {
             return this.words[Math.floor(Math.random() * this.words.length)][0]
         }
     },
     mounted: function () {
-        this.mysteryWord = this.getRandomWord();
-        this.hint = this.words.find(obj => obj[0] == this.mysteryWord)[1];  
         this.showGame = 'false';
     },
     computed: {
-        correctAnswer: function () {
-            return this.answer;
+        shuffleMysteryWord: function () {
+            return this.mysteryWord.split('').sort(function(){return 0.5-Math.random()}).join('');
         }
     }
 })

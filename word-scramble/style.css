@@ -5,3 +5,14 @@
 .correct {
   background-color: green;
 }
+
+.feedback {
+  width: 250px;
+  color: white;
+  height: 22px;
+}
+
+.mysteryWord {
+  font-size: 22px;
+  font-family: monospace;
+}
