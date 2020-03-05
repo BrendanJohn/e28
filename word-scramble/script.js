@@ -35,7 +35,7 @@ let app =  new Vue ({
                 this.feedback = 'You got it! Nice work.'
                 this.correct = true
             } else {    
-                this.feedback = 'Sorry, thats not correct. Please try again.'
+                this.feedback = "Sorry, that's not correct. Please try again."
                 this.correct = false
             }
         },
