@@ -90,5 +90,17 @@ let app =  new Vue ({
         shuffleMysteryWord: function () {
             return this.mysteryWord.split('').sort(function(){return 0.5-Math.random()}).join('');
         }
-    }
+    },
+    watch: {
+        level: function () {
+            if (this.playerName){
+                this.submitNameAndPlay();
+            }
+        },
+        playerName: function () {
+            if (!this.playerName){
+                this.showGame = false
+            }
+        }     
+    } 
 })
