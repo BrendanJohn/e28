@@ -12,6 +12,7 @@ let app =  new Vue ({
         showResult: false,
         lastWord: '',
         level: 'easy',
+        noNameError: '',
         easyWords: [
             ['apple', 'Sometimes red, sometimes delicious'],
             ['washington', 'Rushmore’s left edge'],
@@ -40,11 +41,19 @@ let app =  new Vue ({
             }
         },
         submitNameAndPlay: function () {
-            this.mysteryWord = this.getRandomWord(this.level);
-            this.checkForRepeat(this.level)
-            this.showGame = true;
-            this.shuffledWord = this.shuffleMysteryWord;
-            this.hint = this.getHint(this.level);  
+            if (this.playerName) {
+                this.noNameError = false;
+                this.mysteryWord = this.getRandomWord(this.level);
+                this.checkForRepeat(this.level)
+                this.showGame = true;
+                this.shuffledWord = this.shuffleMysteryWord;
+                this.hint = this.getHint(this.level);
+                this.feedback = '';
+                this.showResult = false;
+            }
+            else {
+                this.noNameError = true;
+            }
         },
         reset: function () {
             this.showGame = 'false';
@@ -100,7 +109,9 @@ let app =  new Vue ({
         playerName: function () {
             if (!this.playerName){
                 this.showGame = false
+                this.noNameError = true
             }
+            this.noNameError = false
         }     
     } 
 })

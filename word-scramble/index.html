@@ -18,7 +18,8 @@
         <div v-if="!playerName"></div>
           <label>Enter your player name:
               <input type="text" v-model="playerName">
-              <input type="button" value="Let's play" v-on:click="submitNameAndPlay" v-on:keyup.enter='submitNameAndPlay'>
+              <input type="button" value="Let's play" v-on:click="submitNameAndPlay">
+              <span class="error" v-if="noNameError">Please enter a name to play</span>
           </label> 
         <div class='level'>
           <p>Difficulty level:</p>
@@ -41,11 +42,11 @@
           <P>Hint:  <i>{{hint}}</i></P>
             <label>Your guess:
               <input type="text" v-model="guess">
-              <input type="button" value="Submit Guess" v-on:keyup.enter='submitAnswer' v-on:click="submitAnswer">
+              <input type="button" value="Submit Guess" v-on:click="submitAnswer">
            </label> 
         </div>
         <div v-bind:class='{error :  !correct, correct : correct}' class='feedback' v-if="showResult">
-            <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" v-on:keyup.enter='reset' v-on:click="reset"></p>
+            <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" v-on:click="reset"></p>
         </div>
         <div v-bind:class="{ true : false }"></div>
     </div>  
