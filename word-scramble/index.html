@@ -26,12 +26,14 @@
           <p>Your mystery word is: {{mysteryWord}}</p>
 
           <P>Hint:  {{hint}}</P>
-
-            <P>Your guess: <input type="button" value="Lets play" v-on:click="submitAnswer"></P>
+            <label>Your guess:
+              <input type="text" v-model="guess">
+              <input type="button" value="Lets play" v-on:click="submitAnswer">
+           </label> 
         </div>
-        <p v-if="showResult">
-            {{feedback}} <input type="button" value="Play again" v-on:click="reset">
-        </p>
+        <div v-bind:class='{error :  !correct, correct : correct}' v-if="showResult">
+            <p>{{feedback}} <input v-if="correct" type="button" value="Play again" v-on:click="reset"></p>
+        </div>
     </div>  
   </body>
 </html>

@@ -1,12 +1,11 @@
 let app =  new Vue ({
     el: '#app',
     data: {
-        mysteryWord: 'someWord',
+        mysteryWord: '',
         guess: '',
-        answer: 'someWord',
         showHint: true,
         playerName: '',
-        hint: 'hint for word',
+        hint: '',
         correct: false,
         feedback: '',
         showGame: false,
@@ -21,11 +20,10 @@ let app =  new Vue ({
     methods: {
         submitAnswer: function () {
             this.showResult = true;
-            if (this.answer == this.correctAnswer) {
+            if (this.guess == this.mysteryWord) {
                 this.feedback = 'You got it! Nice work.'
                 this.correct = true
-            } else {
-                this.imageSource = 'images/sad.jpg'
+            } else {    
                 this.feedback = 'Sorry, thats not correct. Please try again.'
                 this.correct = false
             }
@@ -47,6 +45,7 @@ let app =  new Vue ({
     },
     mounted: function () {
         this.mysteryWord = this.getRandomWord();
+        this.hint = this.words.find(obj => obj[0] == this.mysteryWord)[1];
         this.showGame = 'false';
     },
     computed: {
