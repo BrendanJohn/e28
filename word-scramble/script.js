@@ -41,6 +41,7 @@ let app =  new Vue ({
         },
         submitNameAndPlay: function () {
             this.mysteryWord = this.getRandomWord(this.level);
+            this.checkForRepeat(this.level)
             this.showGame = true;
             this.shuffledWord = this.shuffleMysteryWord;
             this.hint = this.getHint(this.level);  
@@ -75,6 +76,12 @@ let app =  new Vue ({
             else {
                 return this.hardWords.find(obj => obj[0] == this.mysteryWord)[1]; 
             }         
+        },
+        checkForRepeat: function () {
+            if (this.mysteryWord == this.lastWord)
+            {
+                this.getRandomWord(this.level);
+            }
         }
     },
     mounted: function () {
