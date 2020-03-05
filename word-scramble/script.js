@@ -45,7 +45,7 @@ let app =  new Vue ({
     },
     mounted: function () {
         this.mysteryWord = this.getRandomWord();
-        this.hint = this.words.find(obj => obj[0] == this.mysteryWord)[1];
+        this.hint = this.words.find(obj => obj[0] == this.mysteryWord)[1];  
         this.showGame = 'false';
     },
     computed: {
