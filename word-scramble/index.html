@@ -19,6 +19,18 @@
             <input type="text" v-model="playerName">
             <input type="button" value="Lets play" v-on:click="submitNameAndPlay" v-on:keyup.enter='submitNameAndPlay'>
         </label> 
+        <div class='level'>
+          <p>Difficulty level:</p>
+
+          <input type='radio' id='easy' value='easy' v-model='level'>
+          <label for='easy'>Easy</label>
+
+          <input type='radio' id='medium' value='medium' v-model='level'>
+          <label for='medium'>Medium</label>
+
+          <input type='radio' id='hard' value='hard' v-model='level'>
+          <label for='hard'>Hard</label>
+        </div>
 
         <div v-if="showGame == true">
           <p>Game on, {{playerName}}!</p>
@@ -34,6 +46,7 @@
         <div v-bind:class='{error :  !correct, correct : correct}' class='feedback' v-if="showResult">
             <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" v-on:keyup.enter='reset' v-on:click="reset"></p>
         </div>
+        <div v-bind:class="{ true : false }"></div>
     </div>  
   </body>
 </html>
