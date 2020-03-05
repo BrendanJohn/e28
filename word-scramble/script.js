@@ -50,7 +50,6 @@ let app =  new Vue ({
             this.showGame = 'false';
             this.showResult = false;
             this.guess = '';
-            this.playerName = '';
             this.feedback = '';
             this.correct = false;
             this.lastWord = this.mysteryWord;

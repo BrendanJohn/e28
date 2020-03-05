@@ -15,10 +15,11 @@
       </style>
     <div id="app" v-cloak>
         <h1>Word Scramble</h1>
-        <label>Enter your player name:
-            <input type="text" v-model="playerName">
-            <input type="button" value="Lets play" v-on:click="submitNameAndPlay" v-on:keyup.enter='submitNameAndPlay'>
-        </label> 
+        <div v-if="!playerName"></div>
+          <label>Enter your player name:
+              <input type="text" v-model="playerName">
+              <input type="button" value="Lets play" v-on:click="submitNameAndPlay" v-on:keyup.enter='submitNameAndPlay'>
+          </label> 
         <div class='level'>
           <p>Difficulty level:</p>
 
@@ -37,7 +38,7 @@
 
           <p>Your mystery word is: <span class="mysteryWord">{{shuffledWord}}</span></p>
 
-          <P>Hint:  {{hint}}</P>
+          <P>Hint:  <i>{{hint}}</i></P>
             <label>Your guess:
               <input type="text" v-model="guess">
               <input type="button" value="Lets play" v-on:keyup.enter='submitAnswer' v-on:click="submitAnswer">
