@@ -112,6 +112,9 @@ let app =  new Vue ({
                 this.noNameError = true
             }
             this.noNameError = false
+        },
+        guess: function () {
+            this.guess = this.guess.toLowerCase();
         }     
     } 
 })
