@@ -45,9 +45,7 @@
               <input type="button" value="Submit Guess" v-on:click="submitAnswer">
            </label> 
         </div>
-        <div v-bind:class='{error :  !correct, correct : correct}' class='feedback' v-if="showResult">
-            <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" v-on:click="reset"></p>
-        </div>
+        <game-feedback></game-feedback>
         <div v-bind:class="{ true : false }"></div>
     </div>  
   </body>

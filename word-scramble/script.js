@@ -1,3 +1,20 @@
+Vue.component('game-feedback', {
+    data: function() {
+        return{
+            correct: false
+        };
+    },
+    template: `
+    <div v-bind:class='{error :  !correct, correct : correct}' class='feedback' v-if="showResult">
+        <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" v-on:click="reset"></p>
+    </div>`,
+    methods: {
+        correctAnswer: function() {
+            this.correct = false;
+        }
+    }
+})
+
 let app =  new Vue ({
     el: '#app',
     data: {
