@@ -4,10 +4,7 @@ Vue.component('game-feedback', {
             correct: false
         };
     },
-    template: `
-    <div v-bind:class='{error :  !correct, correct : correct}' class='feedback' v-if="showResult">
-        <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" v-on:click="reset"></p>
-    </div>`,
+    template: '#game-feedback',
     methods: {
         correctAnswer: function() {
             this.correct = false;

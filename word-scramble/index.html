@@ -8,6 +8,11 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <script type='text/template' id='game-feedback'>
+      <div v-bind:class='{error :  !correct, correct : correct}' class='feedback' v-if="showResult">
+        <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" v-on:click="reset"></p>
+      </div>
+    </script>
       <style>
           [v-cloak] {
             display: none
