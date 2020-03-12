@@ -1,7 +1,7 @@
 Vue.component('game-feedback', {
-    data: function() {
-        return{  
-        };
+    data: function () {
+        return {   
+        }
     },
     props: ['showResult', 'error', 'feedback', 'correct', 'reset'],
     template: '#game-feedback',
@@ -21,6 +21,7 @@ let app =  new Vue ({
         correct: '',
         playerName: '',
         hint: '',
+        error: '',
         feedback:'',
         showResult: 'false',
         correct: false,
