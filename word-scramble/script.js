@@ -1,9 +1,9 @@
 Vue.component('game-feedback', {
     data: function() {
-        return{
-            correct: false
+        return{  
         };
     },
+    props: ['showResult', 'error', 'feedback', 'correct', 'reset'],
     template: '#game-feedback',
     methods: {
         correctAnswer: function() {
@@ -18,12 +18,13 @@ let app =  new Vue ({
         mysteryWord: '',
         shuffledWord: '',
         guess: '',
+        correct: '',
         playerName: '',
         hint: '',
+        feedback:'',
+        showResult: 'false',
         correct: false,
-        feedback: '',
         showGame: false,
-        showResult: false,
         lastWord: '',
         level: 'easy',
         noNameError: '',

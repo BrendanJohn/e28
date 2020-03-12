@@ -9,8 +9,8 @@
   </head>
   <body>
     <script type='text/template' id='game-feedback'>
-      <div v-bind:class='{error :  !correct, correct : correct}' class='feedback' v-if="showResult">
-        <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" v-on:click="reset"></p>
+      <div class='feedback'>
+        <p><strong>{{feedback}}</strong> <input v-if="correct" type="button" value="Play again" @click='$emit("reset-game")'>Feedback Component</p>
       </div>
     </script>
       <style>
@@ -50,7 +50,12 @@
               <input type="button" value="Submit Guess" v-on:click="submitAnswer">
            </label> 
         </div>
-        <game-feedback></game-feedback>
+        <game-feedback
+          v-on:reset-game='reset()'
+          v-bind:showResult='showResult'
+          v-bind:feedback='feedback'
+          v-bind:correct='correct'
+        ></game-feedback>
         <div v-bind:class="{ true : false }"></div>
     </div>  
   </body>
