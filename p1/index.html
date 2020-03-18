@@ -1,49 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>p1</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-      <style>
-          [v-cloak] {
-            display: none
-        }
-      </style>
-    <div id="app" v-cloak>
-        <label>Whats your name?
-            <input type='text' v-model='playerName'>
-        </label> 
-
-        <p v-if='playerName != ""'>
-            Player: {{playerName}}
-        </p>
-
-        <p>
-            testArray: {{testArray}}
-        </p>
-
-        <div>
-            <h2>Shopping List</h2>
-            <label>Item:
-                <input type='text' v-model='item'>
-            </label>
-                <button v-on:click='items.push(item)'>Add</button>
-            <ul>
-                <p v-if='items.length < 1'>
-                    <i>You have no items in you list
-                </p>
-                <li v-for='thisItem in items'>{{thisItem}}</li>
-            </ul>
-        </div>
-        <p>testing:</p>
-        <div v-if='true'>A</div>
-        <div v-if='false'>B</div>
-        <div v-show='true'>C</div>
-        <div v-show='false'>D</div>
-    </div>  
-  </body>
+<!doctype html>
+<html lang='en'>
+<head>
+	<title>Rock Paper Scissors</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="center">
+		<h1>Rock Paper Scissors</h1>
+		<form class ="submitForm">
+			<p>Please select one:</p>
+			<input type="radio" id="rock" name="selection" value="rock">
+			<label for="rock">Rock</label><br>
+			<input type="radio" id="paper" name="selection" value="paper">
+			<label for="paper">Paper</label><br>
+			<input type="radio" id="scissors" name="selection" value="scissors">
+			<label for="scissors">Scissors</label>
+		</form>
+		</br>
+		<input type="button" onclick=submit() value="Submit">
+	</div>
+	<div class="center">
+		<h2>Game Outcome</h2>
+		<table>
+			<tr>
+			  <th>Player Choice</th>
+			  <th>Computer Choice</th>
+			  <th>Winner</th>
+			</tr>
+			<tr>
+			  <td id="playerSelection"></td>
+			  <td id="computerSelection"></td>
+			  <td id="outcome"></td>
+			</tr>
+		  </table>
+	</div>
+	<div class="center">
+		<h2>Winner:</h2>
+		<h2 id="winner"></h2>
+	</div>
+</body>
 </html>
+<script>
+
+let rock = document.getElementById('rock');
+let paper = document.getElementById('paper');
+let scissors = document.getElementById('scissors');
+let choices = [];
+choices.push(rock, paper, scissors);
+let i = 0;
+
+//submit player's selection
+function submit() {
+	let playerSelection = this.findSelection();
+	let computerSelection = this.findComputerSelection();
+	if (playerSelection) {
+		let outcome = this.rockPaperScissors(playerSelection, computerSelection)
+		this.updateWinnersTable(playerSelection, computerSelection, outcome);  
+	}
+	else {
+		alert("please choose one");   		
+	}
+};
+
+//find the users choice of rock, paper, or scissors
+function findSelection() {
+    for (i = 0; i < choices.length; i++) {
+      if (choices[i].checked == true) {
+        return choices[i].value;
+      }
+    }   
+};
+
+//make a selection for the computer player
+function findComputerSelection() {
+	let randomItem = choices[Math.floor(Math.random()*choices.length)];
+	return randomItem.value;
+};
+
+//determine the outcome of the game
+function rockPaperScissors(playerSelection, computerSelection) {
+	let winner = '';
+	if (playerSelection == computerSelection) {
+		winner = 'tie';
+	}
+	else if (playerSelection == 'rock') {
+		if (computerSelection == 'scissors') {
+			winner = playerSelection;
+		}
+		else {
+			winner = computerSelection;
+		}
+	}
+	else if (playerSelection == 'paper') {
+		if (computerSelection == 'rock') {
+			winner = playerSelection;
+		}
+		else {
+			winner = computerSelection;
+		}
+	}
+	else if (playerSelection == 'scissors') {
+		if (computerSelection == 'paper') {
+			winner = playerSelection;
+		}
+		else {
+			winner = computerSelection;
+		}
+	}
+	return winner;
+};
+
+//update the game outcome table and winner
+function updateWinnersTable(playerSelection, computerSelection, outcome) {
+	document.getElementById('playerSelection').innerHTML = playerSelection;
+	document.getElementById('computerSelection').innerHTML = computerSelection;
+	document.getElementById('outcome').innerHTML = outcome;
+	if (outcome == 'tie') {
+		document.getElementById('winner').innerHTML = 'Tie';
+	}
+	else if (outcome == playerSelection) {
+		document.getElementById('winner').innerHTML = 'Player wins';
+	}
+	else {
+		document.getElementById('winner').innerHTML = 'Computer wins';
+	}
+};
+</script>
