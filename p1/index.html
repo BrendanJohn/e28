@@ -46,54 +46,6 @@
 </html>
 <script>
 
-//find the users choice of rock, paper, or scissors
-function findSelection() {
-    for (i = 0; i < choices.length; i++) {
-      if (choices[i].checked == true) {
-        return choices[i].value;
-      }
-    }   
-};
-
-//make a selection for the computer player
-function findComputerSelection() {
-	let randomItem = choices[Math.floor(Math.random()*choices.length)];
-	return randomItem.value;
-};
-
-//determine the outcome of the game
-function rockPaperScissors(playerSelection, computerSelection) {
-	let winner = '';
-	if (playerSelection == computerSelection) {
-		winner = 'tie';
-	}
-	else if (playerSelection == 'rock') {
-		if (computerSelection == 'scissors') {
-			winner = playerSelection;
-		}
-		else {
-			winner = computerSelection;
-		}
-	}
-	else if (playerSelection == 'paper') {
-		if (computerSelection == 'rock') {
-			winner = playerSelection;
-		}
-		else {
-			winner = computerSelection;
-		}
-	}
-	else if (playerSelection == 'scissors') {
-		if (computerSelection == 'paper') {
-			winner = playerSelection;
-		}
-		else {
-			winner = computerSelection;
-		}
-	}
-	return winner;
-};
-
 //update the game outcome table and winner
 function updateWinnersTable(playerSelection, computerSelection, outcome) {
 	document.getElementById('playerSelection').innerHTML = playerSelection;
