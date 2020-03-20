@@ -10,7 +10,7 @@
 <body>
 	<div id="app" v-cloak>
 		<div class="center">	
-			<h1>Rock Paper Scissors</h1>
+			<h1>Rock-Paper-Scissors</h1>
 			<form class ="submitForm">
 				<p>Please select one:</p>
 				<input type="radio" id="rock" value="Rock" v-model='playerSelection'>
@@ -25,7 +25,11 @@
 			<a v-if='playerSelection' v-on:click='submitSelection' class="playButton">Play</a>
 		</div>
 		<div class="center" v-if="gameCompleted"> 
-				<h2>Game Outcome</h2>
+			<h2 id="winner">Winner: {{ winner }}</h2>
+			<h2>{{ outcome }}</h2>
+		</div>
+		<div class="center" v-if="gameCompleted"> 
+				<h2>Match history</h2>
 				<table>
 					<tr>
 					<th>Player Choice</th>
@@ -38,10 +42,6 @@
 					<td id="outcome">{{ outcome }}</td>
 					</tr>
 				</table>
-		</div>
-		<div class="center" v-if="gameCompleted"> 
-			<h2>Winner:</h2>
-			<h2 id="winner">{{ winner }}</h2>
 		</div>
 	</div>
 </body>

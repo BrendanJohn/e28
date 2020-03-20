@@ -6,7 +6,7 @@
             choices: ['Rock', 'Paper', 'Scissors'],
             outcome: '',
             gameCompleted: false,
-            winner: ''
+            winner: '',
         },
         methods: {
             submitSelection: function () {
@@ -52,7 +52,7 @@
                 else if (playerSelection == 'Scissors') {
                     if (computerSelection == 'Paper') {
                         this.outcome = playerSelection;
-                        this.winner = 'player';
+                        this.winner = 'Player';
                     }
                     else {
                         this.outcome = computerSelection;
