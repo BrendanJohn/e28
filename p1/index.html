@@ -13,16 +13,16 @@
 			<h1>Rock Paper Scissors</h1>
 			<form class ="submitForm">
 				<p>Please select one:</p>
-				<input type="radio" id="rock" value="rock" v-model='playerSelection'>
+				<input type="radio" id="rock" value="Rock" v-model='playerSelection'>
 				<label for="rock">Rock</label><br>
-				<input type="radio" id="paper" value="paper" v-model='playerSelection'>
+				<input type="radio" id="paper" value="Paper" v-model='playerSelection'>
 				<label for="paper">Paper</label><br>
-				<input type="radio" id="scissors" value="scissors" v-model='playerSelection'>
+				<input type="radio" id="scissors" value="Scissors" v-model='playerSelection'>
 				<label for="scissors">Scissors</label>
 				<p v-if='playerSelection'>Player's Choice: {{ playerSelection }}</p>
 			</form>
 			</br>
-			<input type="button" v-on:click='submitSelection' value="Submit">
+			<a v-if='playerSelection' v-on:click='submitSelection' class="playButton">Play</a>
 		</div>
 		<div class="center" v-if="gameCompleted"> 
 				<h2>Game Outcome</h2>

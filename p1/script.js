@@ -3,7 +3,7 @@
         data: {
             playerSelection: '',
             computerSelection: '',
-            choices: ['rock', 'paper', 'scissors'],
+            choices: ['Rock', 'Paper', 'Scissors'],
             outcome: '',
             gameCompleted: false,
             winner: ''
@@ -26,37 +26,37 @@
             //determine the outcome of the game
             rockPaperScissors: function(playerSelection, computerSelection) {
                 if (playerSelection == computerSelection) {
-                    this.outcome = 'tie';
-                    this.winner = 'tie';
+                    this.outcome = 'Tie';
+                    this.winner = 'Tie';
                 }
-                else if (playerSelection == 'rock') {
-                    if (computerSelection == 'scissors') {
+                else if (playerSelection == 'Rock') {
+                    if (computerSelection == 'Scissors') {
+                        this.outcome = playerSelection;
+                        this.winner = 'Player';
+                    }
+                    else {
+                        this.outcome = computerSelection;
+                        this.winner = 'Computer';
+                    }
+                }
+                else if (playerSelection == 'Paper') {
+                    if (computerSelection == 'Rock') {
+                        this.outcome = playerSelection;
+                        this.winner = 'Player';
+                    }
+                    else {
+                        this.outcome = computerSelection;
+                        this.winner = 'Computer';
+                    }
+                }
+                else if (playerSelection == 'Scissors') {
+                    if (computerSelection == 'Paper') {
                         this.outcome = playerSelection;
                         this.winner = 'player';
                     }
                     else {
                         this.outcome = computerSelection;
-                        this.winner = 'computer';
-                    }
-                }
-                else if (playerSelection == 'paper') {
-                    if (computerSelection == 'rock') {
-                        this.outcome = playerSelection;
-                        this.winner = 'player';
-                    }
-                    else {
-                        this.outcome = computerSelection;
-                        this.winner = 'computer';
-                    }
-                }
-                else if (playerSelection == 'scissors') {
-                    if (computerSelection == 'paper') {
-                        this.outcome = playerSelection;
-                        this.winner = 'player';
-                    }
-                    else {
-                        this.outcome = computerSelection;
-                        this.winner = 'computer';
+                        this.winner = 'Computer';
                     }
                 }
                 this.gameCompleted = true;
