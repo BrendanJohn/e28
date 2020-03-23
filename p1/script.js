@@ -31,7 +31,9 @@ let app =  new Vue ({
             gameCompleted: false,
             winner: '',
             gameNumber: 0,
-            rounds: []
+            rounds: [],
+            imageSource: '',
+            imageAlt: ''
         },
         methods: {
             submitSelection: function () {
@@ -62,30 +64,42 @@ let app =  new Vue ({
                     if (computerSelection == 'Scissors') {
                         this.outcome = playerSelection;
                         this.winner = 'Player';
+                        this.imageSource = 'images/rock-winner.png'
+                        this.imageAlt = 'rock'
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
+                        this.imageSource = 'images/paper-winner.png'
+                        this.imageAlt = 'paper'
                     }
                 }
                 else if (playerSelection == 'Paper') {
                     if (computerSelection == 'Rock') {
                         this.outcome = playerSelection;
                         this.winner = 'Player';
+                        this.imageSource = 'images/paper-winner.png'
+                        this.imageAlt = 'paper'
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
+                        this.imageSource = 'images/scissors-winner.png'
+                        this.imageAlt = 'scissors'
                     }
                 }
                 else if (playerSelection == 'Scissors') {
                     if (computerSelection == 'Paper') {
                         this.outcome = playerSelection;
                         this.winner = 'Player';
+                        this.imageSource = 'images/scissors-winner.png'
+                        this.imageAlt = 'scissors'
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
+                        this.imageSource = 'images/rock-winner.png'
+                        this.imageAlt = 'rock'
                     }
                 }
                 this.updateRoundDetail();

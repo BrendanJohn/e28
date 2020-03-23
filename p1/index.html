@@ -25,7 +25,7 @@
 		</div>
 	</script>
 	<div id="app" v-cloak>
-		<div class="main-game">	
+		<div class="left-column">	
 			<h1>Rock-Paper-Scissors</h1>
 			<img src="images/rock-paper-scissors-scissors-clipart.png" class="main-logo">
 			<form class ="submitForm">
@@ -45,11 +45,14 @@
 			<a v-if='rounds.length != 0' v-on:click='submitSelection' class="gameButton">Play again</a>
 			<a v-else-if='playerSelection' v-on:click='submitSelection' class="gameButton">Play</a>
 		</div>
-		<div class="right-top" v-if="rounds.length != 0"> 
-			<h2 id="winner">Winner: {{ winner }}</h2>
+		<div class="middle-column" v-if="rounds.length != 0"> 
+			<h2 id="winner">Winner:</h2>
+			<h2> {{ winner }}</h2>
+			<h2 id="winner">Winning Tool:</h2>
 			<h2> {{ outcome }}</h2>
+			<img :src='imageSource' :alt='imageAlt' class='winning-tool-image'>
 		</div>
-		<div class="right-bottom" v-if="rounds.length != 0"> 
+		<div class="right-column" v-if="rounds.length != 0"> 
 			<h2>Match history</h2>
 				<round-detail
 					v-for='round in rounds'
