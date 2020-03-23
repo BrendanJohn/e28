@@ -5,15 +5,35 @@
 body {
   font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
 }
-
-.center {
-    margin: auto;
-    width: 20%;
+#app {
+  width: 2000px;
+}
+.main-game {
+    margin-left: 25%;
     border: 5px solid blue;
     padding: 30px;
     text-align: center;
     border-radius: 25px;
-  }
+    display: inline-block;
+}
+.right-top {
+  border: 5px solid blue;
+  padding: 30px;
+  text-align: center;
+  border-radius: 25px;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 225px;
+}
+.right-bottom {
+  border: 5px solid blue;
+  padding: 30px;
+  text-align: center;
+  border-radius: 25px;
+  display: inline-block;
+  vertical-align: top;
+  min-width: 250px;
+}
 
   table {
     border-collapse: collapse;
