@@ -21,6 +21,7 @@
 				<input type="radio" id="scissors" value="Scissors" v-model='playerSelection'>
 				<label for="scissors">Scissors</label>
 				<p v-if='playerSelection'>Player's Choice: {{ playerSelection }}</p>
+				<p v-if='gameCompleted'>Computer's Choice: {{ computerSelection }}</p>
 			</form>
 			</br>
 			<a v-if='playerSelection' v-on:click='submitSelection' class="playButton">Play</a>
