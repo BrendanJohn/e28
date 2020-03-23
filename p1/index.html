@@ -8,6 +8,22 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+	<script type='text/x-template' id='round-detail'>
+		<div v-if='!deleted'>
+			<table>
+				<tr>
+				<th>Round</th>
+				<th>Winner</th>
+				<th>Delete Round</th>
+				</tr>
+				<tr>
+				<td>{{ number }}</td>
+				<td >{{ winner }}</td>
+				<td><a @click='deleteRound' class='gameButton'>Delete round</a></td>
+				</tr>
+			</table>
+		</div>
+	</script>
 	<div id="app" v-cloak>
 		<div class="center">	
 			<h1>Rock-Paper-Scissors</h1>
@@ -21,29 +37,25 @@
 				<input type="radio" id="scissors" value="Scissors" v-model='playerSelection'>
 				<label for="scissors">Scissors</label>
 				<p v-if='playerSelection'>Player's Choice: {{ playerSelection }}</p>
+				<p v-else>Player's Choice: </p>
 				<p v-if='gameCompleted'>Computer's Choice: {{ computerSelection }}</p>
+				<p v-else>Computer's Choice: </p>
 			</form>
 			</br>
-			<a v-if='playerSelection' v-on:click='submitSelection' class="playButton">Play</a>
+			<a v-if='rounds.length != 0' v-on:click='submitSelection' class="gameButton">Play again</a>
+			<a v-else-if='playerSelection' v-on:click='submitSelection' class="gameButton">Play</a>
 		</div>
-		<div class="center" v-if="gameCompleted"> 
+		<div class="center" v-if="rounds.length != 0"> 
 			<h2 id="winner">Winner: {{ winner }}</h2>
-			<h2>{{ outcome }}</h2>
+			<h2> {{ outcome }}</h2>
 		</div>
-		<div class="center" v-if="gameCompleted"> 
-				<h2>Match history</h2>
-				<table>
-					<tr>
-					<th>Player Choice</th>
-					<th>Computer Choice</th>
-					<th>Winner</th>
-					</tr>
-					<tr>
-					<td id="playerSelection">{{ playerSelection }}</td>
-					<td id="computerSelection">{{ computerSelection }}</td>
-					<td id="outcome">{{ outcome }}</td>
-					</tr>
-				</table>
+		<div class="center" v-if="rounds.length != 0"> 
+			<h2>Match history</h2>
+				<round-detail
+					v-for='round in rounds'
+					v-bind:key='round.number'
+					v-bind:number='round.number'
+					v-bind:winner='round.winner'></round-detail>
 		</div>
 	</div>
 </body>

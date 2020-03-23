@@ -1,4 +1,27 @@
-    let app =  new Vue ({
+Vue.component('round-detail', {
+    data: function () {
+        return {
+            deleted: false
+        }
+    },
+    template: '#round-detail',
+    props: {
+        // `number` has an expected data type of Number, and it defaults to 0
+        number: {
+            type: Number,
+            default: 0
+        },
+        // `winner` has an expected data type of String, with no default set
+        winner: String,
+        rounds: []
+    },
+    methods: {
+        deleteRound: function () {
+            this.deleted = true;
+        }
+    }
+})    
+let app =  new Vue ({
         el: '#app',
         data: {
             playerSelection: '',
@@ -7,6 +30,8 @@
             outcome: '',
             gameCompleted: false,
             winner: '',
+            gameNumber: 0,
+            rounds: []
         },
         methods: {
             submitSelection: function () {
@@ -22,6 +47,10 @@
             findComputerSelection: function() {
                 let randomItem = choices[Math.floor(Math.random()*choices.length)];
                 return randomItem.value;
+            },
+            updateRoundDetail: function () {
+                this.gameNumber = this.gameNumber + 1;
+                this.rounds.push({ number: this.gameNumber, winner: this.winner })
             },
             //determine the outcome of the game
             rockPaperScissors: function(playerSelection, computerSelection) {
@@ -59,6 +88,7 @@
                         this.winner = 'Computer';
                     }
                 }
+                this.updateRoundDetail();
                 this.gameCompleted = true;
             }
         },
@@ -69,4 +99,4 @@
                 this.gameCompleted = false;
             }
         }
-    })
+})
