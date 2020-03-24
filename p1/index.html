@@ -52,12 +52,12 @@
 			<h2 id="winner">Winning Tool:</h2>
 			<h2> {{ outcome }}</h2>
 			<img :src='imageSource' :alt='imageAlt' class='winning-tool-image'>
-			<h2 v-if="outcome == 'tie'"> {{ outcome }}</h2>
+			<h2 v-if="outcome == 'Tie'"> {{ outcome }}</h2>
 			<h2 v-else-if='winner == playerSelection'> Losing Tool: {{ computerSelection }}</h2>
 			<h2 v-else> Losing Tool: {{ playerSelection }}</h2>
 		</div>
 		<div class="right-column" v-if="rounds.length != 0"> 
-			<h2>Score</h2>
+			<h2>Score:</h2>
 			<h2>Computer {{ computerScore }}</h2>
 			<h2>Player {{ playerScore }}</h2>
 			<a v-if='rounds.length != 0' v-on:click='resetGame' class="gameButton">Reset Game</a>
