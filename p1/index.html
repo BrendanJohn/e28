@@ -37,6 +37,7 @@
 				<input type="radio" id="scissors" value="Scissors" v-model='playerSelection'>
 				<label for="scissors">Scissors</label>
 				<p v-if='playerSelection'>Player's Choice: {{ playerSelection }}</p>
+				<p v-if='playerSelection'>Versus</p>
 				<p v-else>Please make a selection </p>
 				<p v-if='gameCompleted'>Computer's Choice: {{ computerSelection }}</p>
 				<p v-else>Computer's Choice: ? </p>
@@ -51,6 +52,9 @@
 			<h2 id="winner">Winning Tool:</h2>
 			<h2> {{ outcome }}</h2>
 			<img :src='imageSource' :alt='imageAlt' class='winning-tool-image'>
+			<h2 v-if="outcome == 'tie'"> {{ outcome }}</h2>
+			<h2 v-else-if='winner == playerSelection'> Losing Tool: {{ computerSelection }}</h2>
+			<h2 v-else> Losing Tool: {{ playerSelection }}</h2>
 		</div>
 		<div class="right-column" v-if="rounds.length != 0"> 
 			<h2>Score</h2>

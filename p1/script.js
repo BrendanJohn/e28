@@ -68,8 +68,8 @@ let app =  new Vue ({
             //determine the outcome of the game
             rockPaperScissors: function(playerSelection, computerSelection) {
                 if (playerSelection == computerSelection) {
-                    this.outcome = 'Tie';
-                    this.winner = 'Tie';
+                    this.outcome = 'tie';
+                    this.winner = 'tie';
                     this.imageSource = 'images/tie.jpg'
                     this.imageAlt = 'tie'
                 }
