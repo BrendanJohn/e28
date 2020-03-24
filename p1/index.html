@@ -64,7 +64,8 @@
 			<h2>Score:</h2>
 			<h2 v-bind:class="{ winner: winner == 'Computer' }">Computer {{ computerScore }}</h2>
 			<h2 v-bind:class="{ winner: winner == 'Player' }">Player {{ playerScore }}</h2>
-			<a v-if='rounds.length != 0' v-on:click='resetGame' class="gameButton">Reset Game</a>
+			<h2 v-bind:class="{ winner: winner == 'Tie' }">Ties {{ ties }}</h2>
+			<a v-if='rounds.length != 0' v-on:click='resetGame' class="gameButton" id="topMargin">Reset Game</a>
 		</div>
 		<div class="bottom-row" v-if="rounds.length != 0"> 
 			<h2>Match history</h2>

@@ -35,7 +35,8 @@ let app =  new Vue ({
             imageSource: '',
             imageAlt: '',
             computerScore: 0,
-            playerScore: 0
+            playerScore: 0,
+            ties: 0
         },
         methods: {
             submitSelection: function () {
@@ -63,6 +64,7 @@ let app =  new Vue ({
                 this.computerScore = 0;
                 this.playerSelection = '';
                 this.gameNumber = 0;
+                this.ties = 0;
             },
             //determine the outcome of the game
             rockPaperScissors: function(playerSelection, computerSelection) {
@@ -71,6 +73,7 @@ let app =  new Vue ({
                     this.winner = 'Tie';
                     this.imageSource = 'images/tie.jpg'
                     this.imageAlt = 'Tie'
+                    this.ties = this.ties + 1;
                 }
                 else if (playerSelection == 'Rock') {
                     if (computerSelection == 'Scissors') {

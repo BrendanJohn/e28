@@ -70,6 +70,7 @@ tr:nth-child(even) {
   }
 
 .loser {
+  margin-top: 90px;
   font-weight: bold;
   color: red;
 }
@@ -81,6 +82,10 @@ tr:nth-child(even) {
 
 .submitForm {
   text-align: center;
+}
+
+#topMargin {
+  margin-top: 40px;
 }
 
 a.gameButton {
