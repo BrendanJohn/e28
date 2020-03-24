@@ -13,12 +13,23 @@ body {
   width: 2000px;
 }
 .left-column {
-    margin-left: 20%;
+    margin-left: 22%;
     border: 5px solid blue;
     padding: 30px;
     text-align: center;
     border-radius: 25px;
     display: inline-block;
+}
+
+.bottom-row {
+  border: 5px solid blue;
+  padding: 30px;
+  text-align: center;
+  border-radius: 25px;
+  display: block;
+  margin-left: 22%;
+  width: 49%;
+  margin-top: 5px;
 }
 
 .right-column {
@@ -29,6 +40,7 @@ body {
   display: inline-block;
   vertical-align: top;
   min-width: 250px;
+  height: 502px;
 }
 
 .middle-column{

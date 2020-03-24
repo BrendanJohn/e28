@@ -33,7 +33,10 @@ let app =  new Vue ({
             gameNumber: 0,
             rounds: [],
             imageSource: '',
-            imageAlt: ''
+            imageAlt: '',
+            computerScore: 0,
+            playerScore: 0
+
         },
         methods: {
             submitSelection: function () {
@@ -54,6 +57,14 @@ let app =  new Vue ({
                 this.gameNumber = this.gameNumber + 1;
                 this.rounds.push({ number: this.gameNumber, winner: this.winner })
             },
+            resetGame: function () {
+                this.gameNumber = 0;
+                this.rounds = [];
+                this.playerScore = 0;
+                this.computerScore = 0;
+                this.playerSelection = '';
+                this.gameNumber = 0;
+            },
             //determine the outcome of the game
             rockPaperScissors: function(playerSelection, computerSelection) {
                 if (playerSelection == computerSelection) {
@@ -68,12 +79,14 @@ let app =  new Vue ({
                         this.winner = 'Player';
                         this.imageSource = 'images/rock-winner.jpg'
                         this.imageAlt = 'rock'
+                        this.playerScore = this.playerScore + 1;
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
                         this.imageSource = 'images/paper-winner.jpg'
                         this.imageAlt = 'paper'
+                        this.computerScore = this.computerScore + 1;
                     }
                 }
                 else if (playerSelection == 'Paper') {
@@ -82,12 +95,14 @@ let app =  new Vue ({
                         this.winner = 'Player';
                         this.imageSource = 'images/paper-winner.jpg'
                         this.imageAlt = 'paper'
+                        this.playerScore = this.playerScore + 1;
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
                         this.imageSource = 'images/scissors-winner.jpg'
                         this.imageAlt = 'scissors'
+                        this.computerScore = this.computerScore + 1;
                     }
                 }
                 else if (playerSelection == 'Scissors') {
@@ -96,12 +111,14 @@ let app =  new Vue ({
                         this.winner = 'Player';
                         this.imageSource = 'images/scissors-winner.jpg'
                         this.imageAlt = 'scissors'
+                        this.playerScore = this.playerScore + 1;
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
                         this.imageSource = 'images/rock-winner.jpg'
                         this.imageAlt = 'rock'
+                        this.computerScore = this.computerScore + 1;
                     }
                 }
                 this.updateRoundDetail();

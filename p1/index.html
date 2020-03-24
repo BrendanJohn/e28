@@ -53,6 +53,12 @@
 			<img :src='imageSource' :alt='imageAlt' class='winning-tool-image'>
 		</div>
 		<div class="right-column" v-if="rounds.length != 0"> 
+			<h2>Score</h2>
+			<h2>Computer {{ computerScore }}</h2>
+			<h2>Player {{ playerScore }}</h2>
+			<a v-if='rounds.length != 0' v-on:click='resetGame' class="gameButton">Reset Game</a>
+		</div>
+		<div class="bottom-row" v-if="rounds.length != 0"> 
 			<h2>Match history</h2>
 				<round-detail
 					v-for='round in rounds'
