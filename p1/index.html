@@ -20,7 +20,7 @@
 				</tr>
 				<tr>
 				<td>{{ number }}</td>
-				<td>{{ winner }}</td>
+				<td class="winner">{{ winner }}</td>
 				<td><slot name='player'></slot></td>
 				<td><slot name='computer'></slot></td>
 				<td><a @click='deleteRound' class='gameButton'>Delete round</a></td>
@@ -51,19 +51,19 @@
 			<a v-else-if='playerSelection' v-on:click='submitSelection' class="gameButton">Play</a>
 		</div>
 		<div class="middle-column" v-if="rounds.length != 0"> 
-			<h2 id="winner">Winner:</h2>
-			<h2> {{ winner }}</h2>
-			<h2 id="winner">Winning Tool:</h2>
-			<h2> {{ outcome }}</h2>
+			<h2>Winner:</h2>
+			<h2 class="winner"> {{ winner }}</h2>
+			<h2>Winning Tool:</h2>
+			<h2 class="winner"> {{ outcome }}</h2>
 			<img :src='imageSource' :alt='imageAlt' class='winning-tool-image'>
 			<h2 v-if="outcome == 'Tie'"> {{ outcome }}</h2>
-			<h2 v-else-if='winner == playerSelection'> Losing Tool: {{ computerSelection }}</h2>
-			<h2 v-else> Losing Tool: {{ playerSelection }}</h2>
+			<h2 class="loser" v-else-if="winner == 'Player'"> Losing Tool: {{ computerSelection }}</h2>
+			<h2 class="loser" v-else> Losing Tool: {{ playerSelection }}</h2>
 		</div>
 		<div class="right-column" v-if="rounds.length != 0"> 
 			<h2>Score:</h2>
-			<h2>Computer {{ computerScore }}</h2>
-			<h2>Player {{ playerScore }}</h2>
+			<h2 v-bind:class="{ winner: winner == 'Computer' }">Computer {{ computerScore }}</h2>
+			<h2 v-bind:class="{ winner: winner == 'Player' }">Player {{ playerScore }}</h2>
 			<a v-if='rounds.length != 0' v-on:click='resetGame' class="gameButton">Reset Game</a>
 		</div>
 		<div class="bottom-row" v-if="rounds.length != 0"> 

@@ -69,7 +69,12 @@ tr:nth-child(even) {
     background-color: #dddddd;
   }
 
-#winner {
+.loser {
+  font-weight: bold;
+  color: red;
+}
+
+.winner {
   font-weight: bold;
   color: green;
 }
