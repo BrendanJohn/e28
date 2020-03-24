@@ -70,7 +70,7 @@ let app =  new Vue ({
                 if (playerSelection == computerSelection) {
                     this.outcome = 'Tie';
                     this.winner = 'Tie';
-                    this.imageSource = 'images/Tie.jpg'
+                    this.imageSource = 'images/tie.jpg'
                     this.imageAlt = 'Tie'
                 }
                 else if (playerSelection == 'Rock') {
