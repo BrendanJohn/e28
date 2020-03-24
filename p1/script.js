@@ -66,13 +66,13 @@ let app =  new Vue ({
                     if (computerSelection == 'Scissors') {
                         this.outcome = playerSelection;
                         this.winner = 'Player';
-                        this.imageSource = 'images/rock-winner.png'
+                        this.imageSource = 'images/rock-winner.jpg'
                         this.imageAlt = 'rock'
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
-                        this.imageSource = 'images/paper-winner.png'
+                        this.imageSource = 'images/paper-winner.jpg'
                         this.imageAlt = 'paper'
                     }
                 }
@@ -80,13 +80,13 @@ let app =  new Vue ({
                     if (computerSelection == 'Rock') {
                         this.outcome = playerSelection;
                         this.winner = 'Player';
-                        this.imageSource = 'images/paper-winner.png'
+                        this.imageSource = 'images/paper-winner.jpg'
                         this.imageAlt = 'paper'
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
-                        this.imageSource = 'images/scissors-winner.png'
+                        this.imageSource = 'images/scissors-winner.jpg'
                         this.imageAlt = 'scissors'
                     }
                 }
@@ -94,13 +94,13 @@ let app =  new Vue ({
                     if (computerSelection == 'Paper') {
                         this.outcome = playerSelection;
                         this.winner = 'Player';
-                        this.imageSource = 'images/scissors-winner.png'
+                        this.imageSource = 'images/scissors-winner.jpg'
                         this.imageAlt = 'scissors'
                     }
                     else {
                         this.outcome = computerSelection;
                         this.winner = 'Computer';
-                        this.imageSource = 'images/rock-winner.png'
+                        this.imageSource = 'images/rock-winner.jpg'
                         this.imageAlt = 'rock'
                     }
                 }
