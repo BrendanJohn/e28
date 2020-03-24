@@ -36,7 +36,6 @@ let app =  new Vue ({
             imageAlt: '',
             computerScore: 0,
             playerScore: 0
-
         },
         methods: {
             submitSelection: function () {
@@ -55,7 +54,7 @@ let app =  new Vue ({
             },
             updateRoundDetail: function () {
                 this.gameNumber = this.gameNumber + 1;
-                this.rounds.push({ number: this.gameNumber, winner: this.winner })
+                this.rounds.push({ number: this.gameNumber, winner: this.winner, winningTool: this.outcome, playerChoice: this.playerSelection, computerChoice: this.computerSelection })
             },
             resetGame: function () {
                 this.gameNumber = 0;

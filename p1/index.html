@@ -14,11 +14,15 @@
 				<tr>
 				<th>Round</th>
 				<th>Winner</th>
+				<th>Player's Choice</th>
+				<th>Computer's Choice</th>
 				<th>Delete Round</th>
 				</tr>
 				<tr>
 				<td>{{ number }}</td>
-				<td >{{ winner }}</td>
+				<td>{{ winner }}</td>
+				<td><slot name='player'></slot></td>
+				<td><slot name='computer'></slot></td>
 				<td><a @click='deleteRound' class='gameButton'>Delete round</a></td>
 				</tr>
 			</table>
@@ -68,7 +72,10 @@
 					v-for='round in rounds'
 					v-bind:key='round.number'
 					v-bind:number='round.number'
-					v-bind:winner='round.winner'></round-detail>
+					v-bind:winner='round.winner'>
+					<template v-slot:player> {{ round.playerChoice }}</template>
+					<template v-slot:computer> {{ round.computerChoice }}</template>
+				</round-detail>
 		</div>
 	</div>
 </body>
