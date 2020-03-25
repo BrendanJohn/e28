@@ -20,7 +20,7 @@
 				</tr>
 				<tr>
 				<td>{{ number }}</td>
-				<td class="winner">{{ winner }}</td>
+				<td v-bind:class="{ computerWinner: winner == 'Computer' }" class="winner">{{ winner }}</td>
 				<td><slot name='player'></slot></td>
 				<td><slot name='computer'></slot></td>
 				<td><a @click='deleteRound' class='gameButton'>Delete round</a></td>
@@ -51,7 +51,7 @@
 			<a v-else-if='playerSelection' v-on:click='submitSelection' class="gameButton">Play</a>
 		</div>
 		<div class="middle-column" v-if="rounds.length != 0"> 
-			<h2 v-if="winner == 'Computer'" class="computer-winner">Computer Wins!</h2>
+			<h2 v-if="winner == 'Computer'" class="computerWinner">Computer Wins!</h2>
 			<h2 v-else-if="winner == 'Player'" class="winner">Player Wins!</h2>
 			<h2 v-else class="winner">Its a Tie!</h2>
 			<img :src='imageSource' :alt='imageAlt' class='winning-tool-image'>

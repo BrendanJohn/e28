@@ -75,7 +75,7 @@ tr:nth-child(even) {
   font-size: 27px;
 }
 
-.computer-winner {
+.computerWinner {
   font-weight: bold;
   color: red;
   font-size: 27px;
