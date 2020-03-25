@@ -51,14 +51,14 @@
 			<a v-else-if='playerSelection' v-on:click='submitSelection' class="gameButton">Play</a>
 		</div>
 		<div class="middle-column" v-if="rounds.length != 0"> 
-			<h2>Winner:</h2>
-			<h2 class="winner"> {{ winner }}</h2>
-			<h2>Winning Tool:</h2>
-			<h2 class="winner"> {{ outcome }}</h2>
+			<h2 v-if="winner == 'Computer'" class="winner">Computer Wins!</h2>
+			<h2 v-else-if="winner == 'Player'" class="winner">Player Wins!</h2>
+			<h2 v-else class="winner">Its a Tie!</h2>
 			<img :src='imageSource' :alt='imageAlt' class='winning-tool-image'>
-			<h2 v-if="outcome == 'Tie'"> {{ outcome }}</h2>
-			<h2 class="loser" v-else-if="winner == 'Player'"> Losing Tool: {{ computerSelection }}</h2>
-			<h2 class="loser" v-else> Losing Tool: {{ playerSelection }}</h2>
+			<h2 class="winner"> {{ winningTool }}</h2>
+			<h2 v-if="winner == 'Tie'"> Ties</h2>
+			<h2 v-else> Beats</h2>
+			<h2 class="winner"> {{ losingTool }}</h2>
 		</div>
 		<div class="right-column" v-if="rounds.length != 0"> 
 			<h2>Score:</h2>

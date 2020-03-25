@@ -69,15 +69,10 @@ tr:nth-child(even) {
     background-color: #dddddd;
   }
 
-.loser {
-  margin-top: 90px;
-  font-weight: bold;
-  color: red;
-}
-
 .winner {
   font-weight: bold;
   color: green;
+  font-size: 27px;
 }
 
 .submitForm {

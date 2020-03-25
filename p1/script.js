@@ -27,7 +27,8 @@ let app =  new Vue ({
             playerSelection: '',
             computerSelection: '',
             choices: ['Rock', 'Paper', 'Scissors'],
-            outcome: '',
+            winningTool: '',
+            losingTool: '',
             gameCompleted: false,
             winner: '',
             gameNumber: 0,
@@ -55,7 +56,7 @@ let app =  new Vue ({
             },
             updateRoundDetail: function () {
                 this.gameNumber = this.gameNumber + 1;
-                this.rounds.push({ number: this.gameNumber, winner: this.winner, winningTool: this.outcome, playerChoice: this.playerSelection, computerChoice: this.computerSelection })
+                this.rounds.push({ number: this.gameNumber, winner: this.winner, winningTool: this.winningTool, playerChoice: this.playerSelection, computerChoice: this.computerSelection })
             },
             resetGame: function () {
                 this.gameNumber = 0;
@@ -66,10 +67,11 @@ let app =  new Vue ({
                 this.gameNumber = 0;
                 this.ties = 0;
             },
-            //determine the outcome of the game
+            //determine the winningTool of the game
             rockPaperScissors: function(playerSelection, computerSelection) {
                 if (playerSelection == computerSelection) {
-                    this.outcome = 'Tie';
+                    this.winningTool = playerSelection;
+                    this.losingTool = computerSelection;
                     this.winner = 'Tie';
                     this.imageSource = 'images/tie.jpg'
                     this.imageAlt = 'Tie'
@@ -77,14 +79,16 @@ let app =  new Vue ({
                 }
                 else if (playerSelection == 'Rock') {
                     if (computerSelection == 'Scissors') {
-                        this.outcome = playerSelection;
+                        this.winningTool = playerSelection;
+                        this.losingTool = computerSelection;
                         this.winner = 'Player';
                         this.imageSource = 'images/rock-winner.jpg'
                         this.imageAlt = 'rock'
                         this.playerScore = this.playerScore + 1;
                     }
                     else {
-                        this.outcome = computerSelection;
+                        this.winningTool = computerSelection;
+                        this.losingTool = playerSelection;
                         this.winner = 'Computer';
                         this.imageSource = 'images/paper-winner.jpg'
                         this.imageAlt = 'paper'
@@ -93,14 +97,16 @@ let app =  new Vue ({
                 }
                 else if (playerSelection == 'Paper') {
                     if (computerSelection == 'Rock') {
-                        this.outcome = playerSelection;
+                        this.winningTool = playerSelection;
+                        this.losingTool = computerSelection;
                         this.winner = 'Player';
                         this.imageSource = 'images/paper-winner.jpg'
                         this.imageAlt = 'paper'
                         this.playerScore = this.playerScore + 1;
                     }
                     else {
-                        this.outcome = computerSelection;
+                        this.winningTool = computerSelection;
+                        this.losingTool = playerSelection;
                         this.winner = 'Computer';
                         this.imageSource = 'images/scissors-winner.jpg'
                         this.imageAlt = 'scissors'
@@ -109,14 +115,16 @@ let app =  new Vue ({
                 }
                 else if (playerSelection == 'Scissors') {
                     if (computerSelection == 'Paper') {
-                        this.outcome = playerSelection;
+                        this.winningTool = playerSelection;
+                        this.losingTool = computerSelection;
                         this.winner = 'Player';
                         this.imageSource = 'images/scissors-winner.jpg'
                         this.imageAlt = 'scissors'
                         this.playerScore = this.playerScore + 1;
                     }
                     else {
-                        this.outcome = computerSelection;
+                        this.winningTool = computerSelection;
+                        this.losingTool = playerSelection;
                         this.winner = 'Computer';
                         this.imageSource = 'images/rock-winner.jpg'
                         this.imageAlt = 'rock'
