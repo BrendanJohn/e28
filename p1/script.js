@@ -6,19 +6,14 @@ Vue.component('round-detail', {
     },
     template: '#round-detail',
     props: {
-        // `number` has an expected data type of Number, and it defaults to 0
         number: {
             type: Number,
             default: 0
         },
-        // `winner` has an expected data type of String, with no default set
         winner: String,
         rounds: []
     },
     methods: {
-        deleteRound: function () {
-            this.deleted = true;
-        }
     }
 })    
 let app =  new Vue ({
@@ -57,6 +52,22 @@ let app =  new Vue ({
             updateRoundDetail: function () {
                 this.gameNumber = this.gameNumber + 1;
                 this.rounds.push({ number: this.gameNumber, winner: this.winner, winningTool: this.winningTool, playerChoice: this.playerSelection, computerChoice: this.computerSelection })
+            },
+            deleteRound: function (number) {
+                this.updateScores(number)
+                this.rounds = this.rounds.filter((round) => round.number != number);
+            },
+            updateScores: function (roundNumber) {
+                let deletedRound = this.rounds.find(round => round.number === roundNumber);
+                if (deletedRound.winner == 'Player') {
+                    this.playerScore = this.playerScore - 1;
+                }
+                else if (deletedRound.winner == 'Computer') {
+                    this.computerScore = this.computerScore - 1;
+                }
+                else {
+                    this.ties = this.ties - 1;
+                }
             },
             resetGame: function () {
                 this.gameNumber = 0;

@@ -23,7 +23,7 @@
 				<td v-bind:class="{ computerWinner: winner == 'Computer' }" class="winner">{{ winner }}</td>
 				<td><slot name='player'></slot></td>
 				<td><slot name='computer'></slot></td>
-				<td><a @click='deleteRound' class='gameButton'>Delete round</a></td>
+				<td><a v-on:click="$emit('delete-round', number)" class='gameButton'>Delete round</a></td>
 				</tr>
 			</table>
 		</div>
@@ -70,6 +70,7 @@
 		<div class="bottom-row" v-if="rounds.length != 0"> 
 			<h2>Match history</h2>
 				<round-detail
+					v-on:delete-round='deleteRound($event)'
 					v-for='round in rounds'
 					v-bind:key='round.number'
 					v-bind:number='round.number'
