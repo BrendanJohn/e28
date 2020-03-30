@@ -8,11 +8,6 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <script type='text/template' id='game-feedback'>
-      <div v-if="feedback">
-          <p><strong>{{feedback}}</strong> <input type="button" value="Play again" @click='$emit("reset-game")'></p>
-      </div>
-    </script>
       <style>
           [v-cloak] {
             display: none
