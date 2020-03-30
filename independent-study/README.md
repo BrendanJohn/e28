@@ -1,17 +1,26 @@
-# Vue.js versus React Pros and cons, key benefits and drwabacks of each
+# Vue.js versus React Pros and cons, key benefits and drawbacks of each
 
 ## Common features of React and Vue.js
 Each is a javascript library used primarily in front-end development
 
 ## Key features of React
+React is a web framework used as a base in the development of single-page or mobile applications. However, React is only concerned with rendering data to the DOM, and so creating React applications requires the use of additional libraries for state management and routing.
+Initial released on May 29, 2013
 
 ## Drawbacks of React
+Some drawbacks of Vue.js include...
 
 ## Key features of Vue.js
+Incrementally adoptable architecture that focuses on declarative rendering and component composition.
+Initial released in February 2014.
 
 ## Drawbacks of Vue.js
+Some drawbacks of Vue.js include...
 
 ## Conclusion, when to use each library in terms of use cases and examples
+In conclusion..
 
 ## Resources
 https://techliance.com/blog/reactjs-vs-vuejs/
+https://en.wikipedia.org/wiki/Vue.js
+https://en.wikipedia.org/wiki/React_(web_framework)
