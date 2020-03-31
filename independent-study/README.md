@@ -14,6 +14,9 @@ Some drawbacks of Vue.js include...
 Incrementally adoptable architecture that focuses on declarative rendering and component composition.
 Initial released in February 2014.
 
+Vue is described as a progressive framework, meaning it can be incorporated into existing projects incrementally as needed. This is beneficial for developers because they are able to sprinkle in the
+effeciencies and dynamic front-end features of vue without starting over from scratch.
+
 ## Drawbacks of Vue.js
 Some drawbacks of Vue.js include...
 
