@@ -1,6 +1,4 @@
-Vue.component('game-feedback', {
-
-})
+import RoundDetail from './components/RoundDetail'
 
 let app =  new Vue ({
     el: '#app',
