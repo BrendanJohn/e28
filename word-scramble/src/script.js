@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import RoundDetail from './components/RoundDetail'
 
 let app =  new Vue ({
@@ -32,6 +33,9 @@ let app =  new Vue ({
             ['brontosaurus', 'Herbivore from a long time ago'],
             ['massachusetts', 'Home of beantown']
         ]
+    },
+    components: {
+        'round-detail' : RoundDetail
     },
     methods: {
         submitAnswer: function () {
