@@ -7,7 +7,7 @@ Each library also provides reactive and composable view components. //TODO more 
 ## Key features of React
 React is a web framework/library that is used as a base in the development of single-page or mobile applications. However, React is only concerned with rendering data to the DOM, and so creating React applications requires the use of additional libraries for state management and routing. 
 Competing opinion from PluralSight author Cory House.. He contends that React is not a framework, but instead a library that has allowed it to evolve into a remarkabley flexible tool. //TODO more research here  
-Initial released on May 29, 2013 
+Initial released on May 29, 2013.  
 Developed by Facebook 
 
 ## Drawbacks of React
@@ -28,17 +28,17 @@ effeciencies and dynamic front-end features of vue without starting over from sc
 ## Drawbacks of Vue.js
 Some drawbacks of Vue.js include... 
 
-## Ideal use case Vue.js
-Ideal use case of Vue.js
+## Ideal use case of Vue.js
+Ideal use case of Vue.js is this this, and this
 
 ## Conclusion, when to use each library in terms of use cases and examples
-In conclusion..Each framework has a unique set of benefits and drawbacks 
+In conclusion...Each framework has a unique set of benefits and drawbacks 
 
 ## Resources
 https://vuejs.org/v2/guide/comparison.html 
 https://techliance.com/blog/reactjs-vs-vuejs/ 
 https://en.wikipedia.org/wiki/Vue.js 
-https://en.wikipedia.org/wiki/React_(web_framework) 
+https://en.wikipedia.org/wiki/React_(web_framework)  
 https://app.pluralsight.com/library/courses/react-big-picture/table-of-contents 
 https://app.pluralsight.com/library/courses/react-fundamentals-update/table-of-contents 
 https://app.pluralsight.com/library/courses/vuejs-fundamentals/table-of-contents 
