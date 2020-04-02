@@ -6,5 +6,5 @@ Rules are as follows:
 * Guessing is unlimited, but a new game is only possible when the word is correctly solved
 * No same words twice in a row
 
-Course work for DGMD E-28
-<https://hesweb.dev/e28>
+## Live URL
+http://e28word-scramble.brendanmurph.com/ 
