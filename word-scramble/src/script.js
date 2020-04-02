@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import RoundDetail from './components/RoundDetail'
+import GameFeedback from './components/GameFeedback'
 
 let app =  new Vue ({
     el: '#app',
@@ -35,7 +35,7 @@ let app =  new Vue ({
         ]
     },
     components: {
-        'round-detail' : RoundDetail
+        'game-feedback' : GameFeedback
     },
     methods: {
         submitAnswer: function () {
