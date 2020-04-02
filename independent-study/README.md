@@ -1,4 +1,5 @@
-# Vue.js versus React: A Comparison of Key Benefits, Drawbacks, and Essential Use Cases
+# Vue.js versus React:  
+# A Comparison of Key Features and Benefits, Drawbacks, and Essential Use Cases
 
 ## Common features of React and Vue.js
 Vue.js and React are both javascript libraries used primarily in front-end development and each uses a virtual Document Object Model(DOM). 
