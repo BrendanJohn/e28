@@ -35,11 +35,11 @@ Ideal use case of Vue.js is this this, and this
 In conclusion...Each framework has a unique set of benefits and drawbacks 
 
 ## Resources
-https://vuejs.org/v2/guide/comparison.html 
-https://techliance.com/blog/reactjs-vs-vuejs/ 
-https://en.wikipedia.org/wiki/Vue.js 
-https://en.wikipedia.org/wiki/React_(web_framework)  
-https://app.pluralsight.com/library/courses/react-big-picture/table-of-contents 
-https://app.pluralsight.com/library/courses/react-fundamentals-update/table-of-contents 
-https://app.pluralsight.com/library/courses/vuejs-fundamentals/table-of-contents 
+https://vuejs.org/v2/guide/comparison.html  
+https://techliance.com/blog/reactjs-vs-vuejs/  
+https://en.wikipedia.org/wiki/Vue.js  
+https://en.wikipedia.org/wiki/React_(web_framework)   
+https://app.pluralsight.com/library/courses/react-big-picture/table-of-contents  
+https://app.pluralsight.com/library/courses/react-fundamentals-update/table-of-contents  
+https://app.pluralsight.com/library/courses/vuejs-fundamentals/table-of-contents  
 
