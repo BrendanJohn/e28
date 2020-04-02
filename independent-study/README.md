@@ -23,7 +23,7 @@ Incrementally adoptable architecture that focuses on declarative rendering and c
 Initial released in February 2014. 
 
 Vue is described as a progressive framework, meaning it can be incorporated into existing projects incrementally as needed. This is beneficial for developers because they are able to sprinkle in the
-effeciencies and dynamic front-end features of vue without starting over from scratch. 
+effeciencies and dynamic front-end features of vue without starting over from scratch. //TODO this is from class, expand on this with more evidence
 
 Vue is driven entirely by the open source community, whereas Angular and React have a significant share of Google and Facebook employees contributing to the repositories. //TODO more research here  
 Low barrier to entry due to it being a template-centric library 
@@ -35,8 +35,8 @@ One drawback of Vue.js is that it operates withing the context of a small commun
 Ideal use cases of Vue.js include, but are not limited to; Single-Page applications, responsive web application, or small web components that can be introduced into larger monolithic applications
 
 ## Conclusion, when to use each library in terms of use cases and examples
-In conclusion...Each of these powerful frameworks has a unique set of benefits and drawbacks. Based on the demands of the project and preferences of the developers on the team a compelling case can be made
-for using either library.
+In conclusion...Each of these powerful frameworks has a unique set of benefits and drawbacks. Based on the unique demands of the project and preferences of the developers on the team a compelling case can be made
+for using each library.
 
 ## Resources
 https://vuejs.org/  
