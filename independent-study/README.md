@@ -1,5 +1,4 @@
-# Vue.js versus React:  
-# A Comparison of Key Features and Benefits, Drawbacks, and Essential Use Cases
+# Vue.js versus React: A Comparison of Key Features and Benefits, Drawbacks, and Essential Use Cases  
 
 ## Common features of React and Vue.js
 Vue.js and React are both javascript libraries used primarily in front-end development and each uses a virtual Document Object Model(DOM). 
@@ -30,12 +29,10 @@ Vue is driven entirely by the open source community, whereas Angular and React h
 Low barrier to entry due to it being a template-centric library 
 
 ## Drawbacks of Vue.js
-Some drawbacks of Vue.js include... 
-Small community of developers due to its relatively new prescence and light corporate backing (also maybe a benefit?)
+One drawback of Vue.js is that it operates withing the context of a small community of developers due to its relatively new prescence and light corporate backing (also maybe a benefit?)
 
 ## Ideal use cases of Vue.js
-Ideal use cases of Vue.js is this this, and this  
-Single-Page applications, responsive web application, or as mall web components in larger monolithic applications
+Ideal use cases of Vue.js include (but are not limited to); Single-Page applications, responsive web application, or small web components that can be introduced into larger monolithic applications
 
 ## Conclusion, when to use each library in terms of use cases and examples
 In conclusion...Each framework has a unique set of benefits and drawbacks 
