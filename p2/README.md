@@ -1,4 +1,5 @@
 # p2
+# Initial Project Outline
 
 ## Project setup
 ```

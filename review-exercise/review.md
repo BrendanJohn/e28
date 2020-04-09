@@ -1,7 +1,7 @@
 # Vocabulary Review  
 **npm:** Node package manager is a package manager for JavaScript programming language. It is the default package manager for the JavaScript runtime environment Node.js. It consists of a command line client,also called npm, and an online database of public and paid-for private packages, called the npm registry.  
 
-**webpack:** Is a module builder that bundles JavaScript modules with dependencies together and makes them production ready by minifying them and remocing whitespace.  
+**webpack:** Is a module builder that bundles JavaScript modules with dependencies together and makes them production ready by minifying them and remocing whitespace.   
 
 **Vue CLI:** Vue command line interface is a system that allows for rapid and seamless creation of Vue applications with valuable features and libraries out of the box. It also configures webpack immediately making deployment to production very quickly.  
 
@@ -23,7 +23,7 @@
 
 **src/ directory:** Standard location to place all of a project's pre-compiled files.  
 
-**dist/ directory:** Standard location to place all of a project's prduction-ready, compiled files.  
+**dist/ directory:** Standard location to place all of a project's prduction-ready, compiled files.   
 
 **package.json:**  This file contains metadata relevant to the project and supplies information to npm that allows it to identify the project as well as handle the project's dependencies. It defines what libraries will be installed into node_modules when you run npm install.   
 
