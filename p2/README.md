@@ -1,5 +1,6 @@
 # p2
 # Initial Project Outline
+An online storefront containing beverage products that allows a user to browse these products and add them to a shopping bag for purchase.
 
 ## Project setup
 ```
