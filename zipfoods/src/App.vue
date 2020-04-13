@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { products } from './products.js'
+import { products } from '@/products.js'
 export default {
   name: 'App',
   components: {
@@ -28,5 +28,5 @@ export default {
 </script>
 
 <style lang='scss'>
-@import './scss/zipfoods.scss';
+@import '@/scss/zipfoods.scss';
 </style>

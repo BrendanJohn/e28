@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { products } from './../../products'
+import { products } from '@/products'
 export default {
     name: '',
     props: [],

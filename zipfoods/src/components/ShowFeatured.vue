@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { products } from './../products.js';
+import { products } from '@/products.js';
 export default {
     name: '',
     props: ['category'],
