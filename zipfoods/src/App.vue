@@ -14,6 +14,7 @@
 
 <script>
 import { products } from '@/products.js'
+
 export default {
   name: 'App',
   components: {
@@ -22,7 +23,7 @@ export default {
     return {
       products: products,
       links: ['home', 'products', 'categories'],
-    }
+    };
   }
 }
 </script>
