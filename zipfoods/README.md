@@ -1,4 +1,8 @@
 # zipfoods
++ Coursework for E-28
++ An application that allows users to browse food products and categories.
++ This application uses Webpack, Vue.js and Firebase
++ Production URL: <http://zipfoods.brendanmurph.com>
 
 ## Project setup
 ```
