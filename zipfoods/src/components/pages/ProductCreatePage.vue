@@ -24,6 +24,10 @@
         <textarea v-model='product.description' id='description'></textarea>
 
         <input type='submit' value='Add' @click.prevent='addProduct' />
+
+        <transition name='fade'>
+            <div class='alert' v-if='added'>Your product was added!</div>
+        </transition>
     </div>
 </template>
 
@@ -43,13 +47,28 @@ export default {
                 available: '',
                 weight: '',
                 perishable: false,
-                description: ''
+                description: '',
+                added: false
             }
         };
     },
     methods: {
         addProduct: function () {
-            app.api.add('products', this.product);
+            app.api.add('products', this.product).then(id => {
+                console.log('Product was added with the id: ' + id);
+                this.added = true;
+                setTimeout(() => (this.added = false), 3000);
+                this.product = {
+                name: '',
+                slug: '',
+                price: '',
+                available: '',
+                weight: '',
+                perishable: false,
+                description: '',
+                added: false   
+                }
+            })
         }
     }
 };
