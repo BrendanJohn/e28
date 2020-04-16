@@ -1,32 +1,45 @@
-<!-- src/components/ProductPage.vue -->
 <template>
-    <div id='product-page'>
-        <h1 v-if='product'>{{ product.name }}</h1>
-        <p v-if='product'>{{ product.description }}</p>
-        <p v-if='product'>{{ product.price }}</p>
+    <div id='product-page' v-if='product'>
+        <h1>{{ product.name }}</h1>
+        <img
+            class='product-thumb'
+            :alt='"Product image of  " + product.name'
+            :src='imageSrc' />
+        <p class='description'>{{ product.description }}</p>
+        <div class='price'>${{ product.price }}</div>
+
+        <router-link :to='{name: "products"}'>&larr; Return to all products</router-link>
     </div>
 </template>
 
 <script>
-// const axios = require('axios');
+import * as app from '@/common/app.js'
 
 export default {
-    name: 'ProductPage',
+    name: '',
     props: ['slug'],
     data: function() {
         return {
-            //id: this.$route.params.id
-            product: null,
+            //slug: this.$route.params.slug,
+            product: null
         };
     },
-    mounted: function() {
-        // axios
-        //     .get(
-        //         'https://my-json-server.typicode.com/susanBuck/e28-zipfoods-api/products/' + this.id
-        //     )
-        //     .then(response => {
-        //         this.product = response.data;  
-        // });
+    mounted: function () {
+        app.api.find('products', 'slug', this.slug)
+            .then(response =>  {
+                this.product = response;
+        });
+    },
+    computed: {
+        imageSrc: function() {
+            try {
+                return require('@/assets/images/products/' + this.slug + '.jpg');
+            }
+            catch (e) {
+                return require('@/assets/images/products/image-not-available.jpg'); 
+            }
+        },
+
     }
 };
 </script>

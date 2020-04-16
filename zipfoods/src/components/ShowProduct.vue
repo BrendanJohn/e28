@@ -1,6 +1,6 @@
 <!-- src/components/ShowProduct.vue -->
 <template>
-    <router-link :to="{ name: 'product', params: {id: product.id}}">
+    <router-link :to="{ name: 'product', params: {slug: product.slug}}">
     <div class='product'>
         <div class='product-name'>{{ product.name }}</div>
         <img class='product-thumb' :src='imageSrc' />
