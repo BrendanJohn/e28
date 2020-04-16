@@ -5,6 +5,7 @@ import HomePage from '@/components/pages/HomePage.vue'
 import ProductPage from '@/components/pages/ProductPage.vue'
 import ProductsPage from '@/components/pages/ProductsPage.vue'
 import CategoriesPage from '@/components/pages/CategoriesPage.vue'
+import ProductCreatePage from '@/components/pages/ProductCreatePage.vue'
 
 Vue.use(VueRouter);
 
@@ -15,7 +16,8 @@ const routes = [
   {path: '/', component: HomePage, name: 'home'},
   {path: '/products', component: ProductsPage, name: 'products'},
   {path: '/product/:id', component: ProductPage, name: 'product', props: true},
-  {path: '/categories', component: CategoriesPage, name: 'categories'}
+  {path: '/categories', component: CategoriesPage, name: 'categories'},
+  {path: '/products/create', component: ProductCreatePage, name: 'add a product'}
 ]
 
 const router = new VueRouter({

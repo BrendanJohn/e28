@@ -23,11 +23,14 @@
         <label for='description'>Description</label>
         <textarea v-model='product.description' id='description'></textarea>
 
-        <input type='submit' value='Add' />
+        <input type='submit' value='Add' @click.prevent='addProduct' />
     </div>
 </template>
 
 <script>
+
+import * as app from '@/common/app.js';
+
 export default {
     name: '',
     data: function() {
@@ -43,6 +46,11 @@ export default {
                 description: ''
             }
         };
+    },
+    methods: {
+        addProduct: function () {
+            app.api.add('products', this.product);
+        }
     }
 };
 </script>
