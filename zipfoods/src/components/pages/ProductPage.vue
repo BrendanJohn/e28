@@ -3,15 +3,16 @@
     <div id='product-page'>
         <h1 v-if='product'>{{ product.name }}</h1>
         <p v-if='product'>{{ product.description }}</p>
+        <p v-if='product'>{{ product.price }}</p>
     </div>
 </template>
 
 <script>
-const axios = require('axios');
+// const axios = require('axios');
 
 export default {
     name: 'ProductPage',
-    props: ['id'],
+    props: ['slug'],
     data: function() {
         return {
             //id: this.$route.params.id
@@ -19,13 +20,13 @@ export default {
         };
     },
     mounted: function() {
-        axios
-            .get(
-                'https://my-json-server.typicode.com/susanBuck/e28-zipfoods-api/products/' + this.id
-            )
-            .then(response => {
-                this.product = response.data;  
-        });
+        // axios
+        //     .get(
+        //         'https://my-json-server.typicode.com/susanBuck/e28-zipfoods-api/products/' + this.id
+        //     )
+        //     .then(response => {
+        //         this.product = response.data;  
+        // });
     }
 };
 </script>
