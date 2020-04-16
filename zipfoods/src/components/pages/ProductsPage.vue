@@ -12,7 +12,7 @@
 
 <script>
 import ShowProduct from '@/components/ShowProduct.vue'
-const axios = require('axios');
+import * as app from '@/common/app.js'
 
 export default {
     name: '',
@@ -26,13 +26,10 @@ export default {
         };
     },
     mounted: function() {
-    axios
-        .get(
-            'https://my-json-server.typicode.com/susanBuck/e28-zipfoods-api/products'
-        )
-        .then(response => {
-            this.products = response.data;  
-        });
+        app.api.all('products')
+            .then(response =>  {
+                this.products = response;
+            });
    }
 }
 </script>
