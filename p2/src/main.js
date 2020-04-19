@@ -7,9 +7,12 @@ Vue.use(VueRouter);
 
 Vue.config.productionTip = false
 
-//names routes are a good way to remove redundancy
+//named routes are a good way to remove redundancy
 const routes = [
   {path: '/', component: HomePage, name: 'home'},
+  {path: '/beverages', component: HomePage, name: 'home'},
+  {path: '/categories', component: HomePage, name: 'home'},
+  {path: '/products/create', component: HomePage, name: 'home'}
 ]
 
 const router = new VueRouter({
