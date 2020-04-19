@@ -1,17 +1,17 @@
 <template>
     <div>
-        <p>ZipFoods is your one-stop-shop for convenient online grocery shopping in the greater Boston area.</p>
+        <p>Brendan's Ale House is your one-stop-shop for cool craft beers from unique brewers all over Massachussetts.</p>
 
         <show-featured :category='featuredCategory'></show-featured>
     </div>
 </template>
 
 <script>
-import ShowProduct from '../../components/showProduct.vue'
+import ShowFeatured from '../../components/showFeatured.vue'
 export default {
     name: '',
     components: {
-        'show-featured' : ShowProduct
+        'show-featured' : ShowFeatured
     },
     data: function() {
         return {
