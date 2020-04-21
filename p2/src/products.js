@@ -1,4 +1,4 @@
-export const products = [
+export const beverages = [
     {
         id: 1,
         name: 'Driscoll’s Strawberries',

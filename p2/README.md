@@ -1,6 +1,7 @@
 *Any instructions/notes in italics should be removed from the template before submitting*
 
 # Project 2
++ Brendans Ale House
 + By: Brendan Murphy
 + Production URL: <http://e28p2.brendanmurph.com>
 

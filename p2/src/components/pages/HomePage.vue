@@ -1,7 +1,6 @@
 <template>
     <div>
         <p>Brendan's Ale House is your one-stop-shop for cool craft beers from unique brewers all over Massachussetts.</p>
-
         <show-featured :category='featuredCategory'></show-featured>
     </div>
 </template>
