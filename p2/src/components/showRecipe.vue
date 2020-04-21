@@ -3,7 +3,6 @@
     <div class='recipe'>
         <div class='recipe-name'>{{ recipe.name }}</div>
         <img class='recipe-thumb' :src='imageSrc' />
-        <div class='recipe-price'>${{ recipe.price }}</div>
     </div>
     </router-link>
 </template>

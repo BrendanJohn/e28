@@ -6,8 +6,13 @@
             :alt='"recipe image of  " + recipe.name'
             :src='imageSrc' />
         <p class='description'>{{ recipe.description }}</p>
-        <div class='price'>${{ recipe.price }}</div>
-
+        <p class='ingredientOne'>{{ recipe.ingredientOne }}</p>
+        <p class='ingredientTwo'>{{ recipe.ingredientTwo }}</p>
+        <p class='ingredientThree'>{{ recipe.ingredientThree }}</p>
+        <p class='ingredientFour'>{{ recipe.ingredientFour }}</p>
+        <p class='directions'>{{ recipe.directions }}</p>
+        <p class='output'>Output: {{ recipe.output }} liters</p>
+        <p class='brewtime'>Total brew time: {{ recipe.totalBrewTime }}</p>
         <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>
     </div>
 </template>

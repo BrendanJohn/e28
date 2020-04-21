@@ -8,25 +8,31 @@
         <label for='slug'>URL Identifier:</label>
         <input type='text' v-model='recipe.slug' id='slug' />
 
-        <label for='price'>Price:</label>
-        <input type='text' v-model='recipe.price' id='price' />
+        <label for='description'>Description:</label>
+        <textarea  v-model='recipe.description' id='description'></textarea>
 
-        <label for='available'>Quantity available:</label>
-        <input type='text' v-model='recipe.available' id='available' />
+        <label for='ingredientOne'>Ingrediant One:</label>
+        <input type='text' v-model='recipe.ingredientOne' id='ingredientOne' />
 
-        <label for='weight'>Alcoho by Volume (abv):</label>
-        <input type='text' v-model='recipe.abv' id='abv' />
+        <label for='ingredientTwo'>Ingrediant Two:</label>
+        <input type='text' v-model='recipe.ingredientTwo' id='ingredientTwo' />
 
-        <label for='weight'>Brewer:</label>
-        <input type='text' v-model='recipe.brewer' id='brewer' />
+        <label for='ingredientThree'>Ingrediant Three:</label>
+        <input type='text' v-model='recipe.ingredientThree' id='ingredientThree' />
 
-        <label for='perishable'>Style</label>
-        <input type='text' v-model='recipe.style' id='style' />
+        <label for='ingredientFour'>Ingrediant Four:</label>
+        <input type='text' v-model='recipe.ingredientFour' id='ingredientFour' />
 
-        <label for='description'>Description</label>
-        <textarea v-model='recipe.description' id='description'></textarea>
+        <label for='directions'>Directions: </label>
+        <textarea v-model='recipe.directions' id='directions'></textarea>
 
-        <input type='submit' value='Add' @click.prevent='addrecipe' />
+        <label for='totalBrewTime'>Total Brew Time:</label>
+        <input type='text' v-model='recipe.totalBrewTime' id='totalBrewTime' />
+
+        <label for='output'>Output (in liters):</label>
+        <input type='number' v-model='recipe.output' id='output' />
+        <br />
+        <input type='submit' value='Add' @click.prevent='addRecipe' />
 
         <transition name='fade'>
             <div class='alert' v-if='added'>Your recipe was added!</div>
@@ -44,18 +50,21 @@ export default {
             recipe: {
                 name: '',
                 slug: '',
-                price: '',
-                available: '',
-                abv: '',
-                style: '',
-                brewer: '',
                 description: '',
+                ingredientOne: '',
+                ingredientTwo: '',
+                ingredientThree: '',
+                ingredientFour: '',
+                directions: '',
+                totalBrewTime: '',
+                output: '',
+                favorite: false,
                 added: false
             }
         };
     },
     methods: {
-        addrecipe: function () {
+        addRecipe: function () {
             app.api.add('recipes', this.recipe).then(id => {
                 console.log('recipe was added with the id: ' + id);
                 this.added = true;
@@ -63,13 +72,16 @@ export default {
                 this.recipe = {
                 name: '',
                 slug: '',
-                price: '',
-                available: '',
-                abv: '',
-                style: '',
-                brewer: '',
                 description: '',
-                added: false 
+                ingredientOne: '',
+                ingredientTwo: '',
+                ingredientThree: '',
+                ingredientFour: '',
+                directions: '',
+                totalBrewTime: '',
+                output: '',
+                favorite: false,
+                added: false
                 }
             })
         }

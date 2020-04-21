@@ -111,32 +111,32 @@ nav ul {
 /*----------------------------------------------------
 PAGE SPECIFIC
 -----------------------------------------------------*/
-#products {
-    .product {
+#recipes {
+    .recipe {
         width: 75%;
         margin: auto;
         margin-bottom: 20px;
         border: 1px solid black;
         padding: 20px;
 
-        .product-name {
+        .recipe-name {
             font-weight: bold;
             font-size: 2.0rem;
             margin: 5px 0 10px 0;
         }
 
-        .product-thumb {
-            width: 200px;
+        .recipe-thumb {
+            width: 175px;
         }
 
-        .product-description {
+        .recipe-description {
             width: 75%;
             margin: auto;
             text-align: left;
             font-style: italic;
         }
 
-        .product-price {
+        .recipe-price {
             font-family: Georgia, 'Times New Roman', Times, serif;
             font-weight: bold;
             font-size: 2.0rem;
@@ -150,7 +150,7 @@ PAGE SPECIFIC
     padding: 10px;
 }
 
-#product-page {
+#recipe-page {
     img {
         width: 200px;
     }
