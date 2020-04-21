@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import HomePage from '@/components/pages/HomePage.vue'
 import AddABeverage from '@/components/pages/addABeverage.vue'
 import BeveragePage from '@/components/pages/beveragePage.vue'
+import CategoriesPage from '@/components/pages/categoriesPage.vue'
 import BeveragesPage from '@/components/pages/beveragesPage.vue'
 
 Vue.use(VueRouter);
@@ -14,6 +15,7 @@ Vue.config.productionTip = false
 const routes = [
   {path: '/', component: HomePage, name: 'home'},
   {path: '/beverages', component: BeveragesPage, name: 'beverages'},
+  {path: '/categories', component: CategoriesPage, name: 'categories'},
   {path: '/beverage/:slug', component: BeveragePage, name: 'beverage', props: true},
   {path: '/beverages/create', component: AddABeverage, name: 'add a beverage'}
 ]

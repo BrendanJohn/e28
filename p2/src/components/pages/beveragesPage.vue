@@ -20,13 +20,13 @@ export default {
     props: [],
     data: function() {
         return {
-            beverage: []
+            beverages: []
         };
     },
     mounted: function() {
-        app.api.all('beverage')
+        app.api.all('beverages')
             .then(response =>  {
-                this.beverage = response;
+                this.beverages = response;
             });
    }
 }

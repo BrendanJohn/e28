@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import { beverage } from '@/products.js';
+import { beverages } from '@/products.js';
 export default {
     name: '',
     props: ['category'],
     data: function() {
         return {
-            beverage: beverage
+            beverages: beverages
         };
     },
     computed: {
@@ -22,7 +22,7 @@ export default {
             function isMatch(beverage) {
                 return beverage.categories.includes(this);
             }
-            return this.beverage.filter(isMatch, this.category);
+            return this.beverages.filter(isMatch, this.category);
         }
     }
 }
