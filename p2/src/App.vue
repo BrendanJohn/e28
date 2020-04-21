@@ -18,7 +18,7 @@ export default {
     components: {},
     data: function() {
         return {
-            links: ['home', 'beverages', 'categories', 'add a beverage']
+            links: ['home', 'recipes', 'categories', 'add a recipe']
         };
     },
     mounted: function() {}

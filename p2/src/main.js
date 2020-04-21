@@ -2,10 +2,10 @@ import Vue from 'vue'
 import App from '@/App.vue'
 import VueRouter from 'vue-router'
 import HomePage from '@/components/pages/HomePage.vue'
-import AddABeverage from '@/components/pages/addABeverage.vue'
-import BeveragePage from '@/components/pages/beveragePage.vue'
+import AddARecipe from '@/components/pages/addARecipe.vue'
+import RecipePage from '@/components/pages/recipePage.vue'
 import CategoriesPage from '@/components/pages/categoriesPage.vue'
-import BeveragesPage from '@/components/pages/beveragesPage.vue'
+import RecipesPage from '@/components/pages/recipesPage.vue'
 
 Vue.use(VueRouter);
 
@@ -14,10 +14,10 @@ Vue.config.productionTip = false
 //named routes are a good way to remove redundancy
 const routes = [
   {path: '/', component: HomePage, name: 'home'},
-  {path: '/beverages', component: BeveragesPage, name: 'beverages'},
+  {path: '/recipes', component: RecipesPage, name: 'recipes'},
   {path: '/categories', component: CategoriesPage, name: 'categories'},
-  {path: '/beverage/:slug', component: BeveragePage, name: 'beverage', props: true},
-  {path: '/beverages/create', component: AddABeverage, name: 'add a beverage'}
+  {path: '/recipe/:slug', component: RecipePage, name: 'recipe', props: true},
+  {path: '/recipes/create', component: AddARecipe, name: 'add a recipe'}
 ]
 
 const router = new VueRouter({

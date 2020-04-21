@@ -1,28 +1,28 @@
 <template>
     <div id='featured'>
-        <h2>This Weeks Featured Beverages</h2>
+        <h2>This Weeks Featured Recipes</h2>
         <ul class='cleanList'>
-            <li v-for='beverage in featuredBeverages' :key='beverage.id'>{{ beverage.name }}</li>
+            <li v-for='recipe in featuredRecipes' :key='recipe.id'>{{ recipe.name }}</li>
         </ul>
     </div>
 </template>
 
 <script>
-import { beverages } from '@/products.js';
+import { recipes } from '@/products.js';
 export default {
     name: '',
     props: ['category'],
     data: function() {
         return {
-            beverages: beverages
+            recipes: recipes
         };
     },
     computed: {
-        featuredBeverages: function() {
-            function isMatch(beverage) {
-                return beverage.categories.includes(this);
+        featuredRecipes: function() {
+            function isMatch(recipe) {
+                return recipe.categories.includes(this);
             }
-            return this.beverages.filter(isMatch, this.category);
+            return this.recipes.filter(isMatch, this.category);
         }
     }
 }

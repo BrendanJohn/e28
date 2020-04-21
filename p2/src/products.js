@@ -1,4 +1,4 @@
-export const beverages = [
+export const recipes = [
     {
         id: 1,
         name: 'Driscoll’s Strawberries',

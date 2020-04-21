@@ -1,35 +1,35 @@
 <template>
     <div>
-        <h2>Add a Beverage</h2>
+        <h2>Add a Recipe</h2>
 
         <label for='name'>Name</label>
-        <input type='text' v-model='beverage.name' id='name' />
+        <input type='text' v-model='recipe.name' id='name' />
 
         <label for='slug'>URL Identifier:</label>
-        <input type='text' v-model='beverage.slug' id='slug' />
+        <input type='text' v-model='recipe.slug' id='slug' />
 
         <label for='price'>Price:</label>
-        <input type='text' v-model='beverage.price' id='price' />
+        <input type='text' v-model='recipe.price' id='price' />
 
         <label for='available'>Quantity available:</label>
-        <input type='text' v-model='beverage.available' id='available' />
+        <input type='text' v-model='recipe.available' id='available' />
 
         <label for='weight'>Alcoho by Volume (abv):</label>
-        <input type='text' v-model='beverage.abv' id='abv' />
+        <input type='text' v-model='recipe.abv' id='abv' />
 
         <label for='weight'>Brewer:</label>
-        <input type='text' v-model='beverage.brewer' id='brewer' />
+        <input type='text' v-model='recipe.brewer' id='brewer' />
 
         <label for='perishable'>Style</label>
-        <input type='text' v-model='beverage.style' id='style' />
+        <input type='text' v-model='recipe.style' id='style' />
 
         <label for='description'>Description</label>
-        <textarea v-model='beverage.description' id='description'></textarea>
+        <textarea v-model='recipe.description' id='description'></textarea>
 
-        <input type='submit' value='Add' @click.prevent='addbeverage' />
+        <input type='submit' value='Add' @click.prevent='addrecipe' />
 
         <transition name='fade'>
-            <div class='alert' v-if='added'>Your beverage was added!</div>
+            <div class='alert' v-if='added'>Your recipe was added!</div>
         </transition>
     </div>
 </template>
@@ -41,7 +41,7 @@ export default {
     data: function() {
         return {
             added: false,
-            beverage: {
+            recipe: {
                 name: '',
                 slug: '',
                 price: '',
@@ -55,12 +55,12 @@ export default {
         };
     },
     methods: {
-        addbeverage: function () {
-            app.api.add('beverages', this.beverage).then(id => {
-                console.log('beverage was added with the id: ' + id);
+        addrecipe: function () {
+            app.api.add('recipes', this.recipe).then(id => {
+                console.log('recipe was added with the id: ' + id);
                 this.added = true;
                 setTimeout(() => (this.added = false), 3000);
-                this.beverage = {
+                this.recipe = {
                 name: '',
                 slug: '',
                 price: '',
