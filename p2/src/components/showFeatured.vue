@@ -1,6 +1,6 @@
 <template>
     <div id='featured'>
-        <h2>Featured Beverages</h2>
+        <h2>This Weeks Featured Beverages</h2>
         <ul class='cleanList'>
             <li v-for='beverage in featuredBeverages' :key='beverage.id'>{{ beverage.name }}</li>
         </ul>

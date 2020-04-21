@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+      <img alt='Mainlogo' id='logo' src='@/assets/images/alehouse-logo.jpg' />
             <nav>
             <ul>
                 <li v-for='link in links' :key='link'>
