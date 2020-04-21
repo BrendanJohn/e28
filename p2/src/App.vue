@@ -8,7 +8,6 @@
                 </li>
             </ul>
         </nav>
-
         <router-view></router-view>
   </div>
 </template>
