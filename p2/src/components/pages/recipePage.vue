@@ -38,8 +38,10 @@ export default {
     },
     methods: {
         persist: function() {
-            localStorage.recipes = this.recipe.description;
-            console.log(localStorage.recipes + 'saved to my favorites');
+            let favoriteRecipes = [];
+            favoriteRecipes.push(this.recipe.slug)
+            localStorage.favoriteRecipes = favoriteRecipes;
+            console.log(localStorage.favoriteRecipes + ' saved to my favorites');
         }
     },
     computed: {

@@ -11,6 +11,7 @@
 
 <script>
 import ShowRecipe from '@/components/showRecipe.vue'
+import * as app from '@/common/app.js'
 export default {
     name: '',
     components: {
@@ -23,10 +24,10 @@ export default {
         };
     },
     mounted: function() {
-        if (localStorage.recipes) {
-            console.log('found recipe' + localStorage.recipes)
-            this.recipes = localStorage.recipes;
-        }
+        app.api.find('recipes', 'slug', localStorage.favoriteRecipes)
+            .then(response =>  {
+                this.recipes.push(response);
+            });
    }
 }
 </script>
