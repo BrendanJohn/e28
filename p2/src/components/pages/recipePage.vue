@@ -13,7 +13,10 @@
         <p class='directions'>{{ recipe.directions }}</p>
         <p class='output'>Output: {{ recipe.output }} liters</p>
         <p class='brewtime'>Total brew time: {{ recipe.totalBrewTime }}</p>
-        <p><button @click="addFavoriteRecipe">Save to favorites</button></p>
+        <p><button @click.prevent="addFavoriteRecipe">Save to favorites</button></p>
+        <transition name='fade'>
+            <div class='alert' v-if='added'>Your recipe was added!</div>
+        </transition>
         <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>
     </div>
 </template>
@@ -28,6 +31,7 @@ export default {
         return {
             recipe: {},
             favoriteRecipes: [],
+            added: ''
         };
     },
     mounted: function () {
@@ -43,6 +47,12 @@ export default {
         addFavoriteRecipe: function() {
             this.favoriteRecipes.push(this.recipe.slug);
             localStorage.setItem('favoriteRecipes', this.favoriteRecipes);
+            this.checkIfAdded();
+        },
+        checkIfAdded: function () {
+            if (localStorage.getItem('favoriteRecipes').includes(this.recipe.slug)) {
+                this.added = true;
+            }
         }
     },
     computed: {

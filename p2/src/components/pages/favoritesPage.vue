@@ -11,6 +11,7 @@
     </div>
     <div v-else>
         <p>Looks like you don't have any favorites yet, why not visit the recipes page and find one</p>
+        <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>
     </div>
     </div>
 </template>
@@ -28,7 +29,8 @@ export default {
         return {
             recipes: [],
             favoriteRecipes: [],
-            hasFavorites: false
+            hasFavorites: '',
+            removed: ''
         };
     },
     mounted: function() {
@@ -50,6 +52,7 @@ export default {
                 this.favoriteRecipes.splice(indexOfRecipe, 1);
             }
             localStorage.setItem('favoriteRecipes', this.favoriteRecipes)
+            this.checkIfRemoved(event);
         }
     }
 }

@@ -3,7 +3,10 @@
     <div class='recipe'>
         <div class='recipe-name'>{{ recipe.name }}</div>
         <img class='recipe-thumb' :src='imageSrc' />
-        <p><button v-on:click="$emit('remove-recipe', recipe.slug)">Remove from favorites</button></p>
+        <p><button @click.prevent="$emit('remove-recipe', recipe.slug)">Remove from favorites</button></p>
+        <transition name='fade'>
+            <div class='alert' v-if='removed'>Your recipe was removed from favorites!</div>
+        </transition>
     </div>
     </router-link>
 </template>
@@ -11,7 +14,7 @@
 <script>
 export default {
     name: '',
-    props: ['recipe', 'hasFavorites'],
+    props: ['recipe', 'hasFavorites', 'removed'],
     data: function() {
         return {
         };
@@ -23,6 +26,13 @@ export default {
             }
             catch (e) {
                 return require('@/assets/images/recipes/image-not-available.jpg'); 
+            }
+        }
+    },
+    methods: {
+        checkIfRemoved: function () {
+            if (!localStorage.getItem('favoriteRecipes').includes(this.recipe.slug)) {
+                this.removed = true;
             }
         }
     }
