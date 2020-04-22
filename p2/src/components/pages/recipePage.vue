@@ -13,7 +13,7 @@
         <p class='directions'>{{ recipe.directions }}</p>
         <p class='output'>Output: {{ recipe.output }} liters</p>
         <p class='brewtime'>Total brew time: {{ recipe.totalBrewTime }}</p>
-          <p><button @click="persist">Save to favorites</button></p>
+        <p><button @click="addFavoriteRecipe">Save to favorites</button></p>
         <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>
     </div>
 </template>
@@ -26,22 +26,23 @@ export default {
     props: ['slug'],
     data: function() {
         return {
-            //slug: this.$route.params.slug,
-            recipe: {}
+            recipe: {},
+            favoriteRecipes: [],
         };
     },
     mounted: function () {
+        if (localStorage.getItem('favoriteRecipes')) {
+            this.favoriteRecipes.push(localStorage.getItem('favoriteRecipes'));
+        }
         app.api.find('recipes', 'slug', this.slug)
             .then(response =>  {
                 this.recipe = response;
         });
     },
     methods: {
-        persist: function() {
-            let favoriteRecipes = [];
-            favoriteRecipes.push(this.recipe.slug)
-            localStorage.favoriteRecipes = favoriteRecipes;
-            console.log(localStorage.favoriteRecipes + ' saved to my favorites');
+        addFavoriteRecipe: function() {
+            this.favoriteRecipes.push(this.recipe.slug);
+            localStorage.setItem('favoriteRecipes', this.favoriteRecipes);
         }
     },
     computed: {
