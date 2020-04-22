@@ -13,6 +13,7 @@
         <p class='directions'>{{ recipe.directions }}</p>
         <p class='output'>Output: {{ recipe.output }} liters</p>
         <p class='brewtime'>Total brew time: {{ recipe.totalBrewTime }}</p>
+          <p><button @click="persist">Save to favorites</button></p>
         <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>
     </div>
 </template>
@@ -26,7 +27,7 @@ export default {
     data: function() {
         return {
             //slug: this.$route.params.slug,
-            recipe: null
+            recipe: {}
         };
     },
     mounted: function () {
@@ -34,6 +35,12 @@ export default {
             .then(response =>  {
                 this.recipe = response;
         });
+    },
+    methods: {
+        persist: function() {
+            localStorage.recipes = this.recipe.description;
+            console.log(localStorage.recipes + 'saved to my favorites');
+        }
     },
     computed: {
         imageSrc: function() {
