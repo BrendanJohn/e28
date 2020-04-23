@@ -1,4 +1,3 @@
-*Any instructions/notes in italics should be removed from the template before submitting*
 
 # Project 2: SPA, SFCs, server interactions
 + Brendans Ale House
