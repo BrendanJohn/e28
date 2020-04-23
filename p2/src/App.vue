@@ -20,8 +20,7 @@ export default {
         return {
             links: ['home', 'recipes', 'categories', 'add a recipe', 'favorites']
         };
-    },
-    mounted: function() {}
+    }
 };
 </script>
 

@@ -22,7 +22,7 @@ export default class Api {
 
     /**
      * Get a document from a `collection` where `field` == `value`
-     * ex: get('products', 'slug', 'bare-coconut-chips')
+     * ex: get('recipes', 'slug', 'english-style-bitter')
      */
     async find(collection, field, value) {
         try {
