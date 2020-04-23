@@ -51,6 +51,11 @@ export default {
             if (indexOfRecipe > -1) {
                 this.recipes.splice(indexOfRecipe, 1);
             }
+            let newFavoriteList = [];
+            this.recipes.forEach(element =>  {
+                newFavoriteList.push(element.slug);
+            }); 
+            localStorage.setItem('favoriteRecipes', newFavoriteList);
         }
     }
 }
