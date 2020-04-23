@@ -1,6 +1,7 @@
 <template>
     <div>
-        <p>Brendan's Ale House is your one-stop-shop for craft beer recipes.</p>
+        <p><strong>Brendan's Ale House</strong> is your one-stop-shop for craft beer recipes.</p>
+        <p>In celebration of Saint Patrick's Day, please enjoy this weeks featured recipes which are stout-styled beers.</p>
         <show-featured :category='featuredCategory'></show-featured>
     </div>
 </template>
