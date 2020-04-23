@@ -19,7 +19,9 @@ showRecipe.vue
 showRecipes.vue
   
 ## Server interaction
-*List the features in your application that are persisting and retrieving data from the server*
+Home page, recipes page, and categories page each retrieve data from the server using an api call to firebase.  
+Add a recipe page persists new recipes to the server using the same api call to firebase.  
+Favorites page does not persist or retrieve data from the server, instead data is persisted and retrieved from local storage within the browser.  
 
 ## Outside resources
 American Pale Ale recipe  
