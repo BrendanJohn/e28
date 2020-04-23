@@ -43,16 +43,14 @@ export default {
                     this.recipes.push(response);
                 });            
             }); 
-        }
+        }   
     },
     methods: {
         removeRecipe: function(event) { 
             const indexOfRecipe = this.favoriteRecipes.indexOf(event);
             if (indexOfRecipe > -1) {
-                this.favoriteRecipes.splice(indexOfRecipe, 1);
+                this.recipes.splice(indexOfRecipe, 1);
             }
-            localStorage.setItem('favoriteRecipes', this.favoriteRecipes)
-            this.checkIfRemoved(event);
         }
     }
 }
