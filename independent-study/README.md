@@ -2,11 +2,20 @@
 
 ## Common features of React and Vue.js
 Vue.js and React are both javascript libraries used primarily in front-end development and each uses a virtual Document Object Model(DOM). 
-Each library also provides reactive and composable view components. //TODO more research here 
+Each library also provides reactive and composable view components. These components accept input data in the form props and are able re-render markup on state changes with little to indication  
+of a full page reload experience for the user. Each of these libraries focuses primarily on their own core library, with concerns such as rotuing and state management handled by companion libraries.
 
 ## Key benefits and features of React
-React is a web framework/library that is used as a base in the development of single-page or mobile applications. However, React is only concerned with rendering data to the DOM, and so creating React applications requires the use of additional libraries for state management and routing. 
-Competing opinion from PluralSight author Cory House.. He contends that React is not a framework, but instead a library that has allowed it to evolve into a remarkabley flexible tool. //TODO more research here  
+React is a javascript library or framework that is used as a base in the development of single-page and mobile applications. React is only concerned with rendering data to the DOM, therefore creating React applications requires the use of additional libraries for state management and routing. This open reliance on outside libraries is a design feature and lends itself to the idea that React is more of a library than a framework. Developing in React introduces users to the introduction and usage of JSX to describe what the UI should look like. JSX is a syntax extension of JavaScript that the developers of React recommend is used to produce React "elements" (not to be confused with components). These elements are the building blocks of React components and are declared like this:   
+
+```const element = <h1>Hello, world</h1>;```
+
+Much like Vue.js, React makes extensive use of small, reusable pieces of code called components that return a React element to be rendered in the browser. The simplest version of this is a simple Javscript  function that returns a React element: 
+
+``` function Welcome(props) {
+return <h1>Hello, {props.name}</h1>;
+} ```
+
 Initial released on May 29, 2013.  
 Developed by Facebook 
 
