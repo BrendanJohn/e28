@@ -12,9 +12,9 @@ React is a javascript library or framework that is used as a base in the develop
 
 Much like Vue.js, React makes extensive use of small, reusable pieces of code called components that return a React element to be rendered in the browser. The simplest version of this is a simple Javscript  function that returns a React element: 
 
-``` function Welcome(props) {
-return <h1>Hello, {props.name}</h1>;
-} ```
+``` function Welcome(props) {```
+```return <h1>Hello, {props.name}</h1>;```
+```} ```
 
 Initial released on May 29, 2013.  
 Developed by Facebook 
