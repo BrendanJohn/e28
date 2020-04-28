@@ -26,12 +26,10 @@ Initial released on May 29, 2013.
 Developed by Facebook 
 
 ## Drawbacks of React
-Some drawbacks of React include... 
-Optimization: In React, when a component's state changes, it triggers the re-render of the entire component sub-tree, starting at that component as root. 
-React has a javascript-centric approach versus a template-centric approach like Vue, resulting in a library the demands more upfront knowledge of essential javascript from its developers. 
+Some drawbacks of React include small optimization problems and also barriers to entry that may inhibit certain developers. In terms of optimization, when a React component's state changes, it triggers the re-render of the entire component sub-tree, starting at that component as root. This is especially painful in components with large sub-trees that require the library to perform a diff, element by element, looking for changes that may not even be there. Although this is not prevelant in all applications, some developers maintain components with very small sub-trees. This is not always an easy task and requires some design thinking along the way of component development. This furthers the theory that React overall has a javascript-centric approach versus a template-centric approach like Vue, resulting in a library the demands more upfront knowledge of essential javascript from its developers. This may prohibit a more widespread adoption of the library.
 
 ## Ideal use cases
-Ideal use cases of React include mobile application with react native, web development with react and redux, and virtual reality websites and 360 experiences using React VR. 
+Ideal use cases of React include mobile application with React native, web development with React and Redux, and virtual reality websites and 360 experiences using React VR. 
 
 ## Key benefits and features of Vue.js
 Incrementally adoptable architecture that focuses on declarative rendering and component composition.  
