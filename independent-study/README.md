@@ -33,7 +33,7 @@ Ideal use cases of React include mobile application with React native, web devel
 ## Key benefits and features of Vue.js
 Described as a progressive framework, Vue.js is a relatively small JavaScript library that can be incorporated into existing projects incrementally as needed. The small and lightweight architecture of Vue is a design choice that is beneficial for developers because they are able to sprinkle in the effeciencies and dynamic front-end features rebuilding from scratch. Vue.js is an incrementally adoptable architecture that focuses on declarative rendering and component composition. Here lies one of the key differences between React and Vue, where React uses a functional design with regard to components, Vue implements a declarative design. This is in itself, also a unique design decision that embraces the go forward approach of ES lent6. In Vue, Components are created using the following syntax:  
 
-Vue is driven entirely by the open source community, whereas Angular and React have a significant share of Google and Facebook employees contributing to the repositories. //TODO more research here. Vue also tends toward more usage among the entirety of the pool of developes becase of its low barrier to entry due to it being a template-centric library.
+Vue is driven entirely by the open source community, whereas Angular and React have a significant share of Google and Facebook employees contributing to the repositories. Vue also tends toward more usage among the entirety of the pool of developes becase of its low barrier to entry due to it being a template-centric library. Thanks to this low barrier to entry, and beginner friendly nature, the library of components availalble in the Vue ecosystem is uniqely large for such a small lightweight tool, and a testament to its ease of use and adoptability.
 Initially released in February 2014.  
 Developed by Evan You.    
 
@@ -41,11 +41,10 @@ Developed by Evan You.
 One drawback of Vue.js is that it operates withing the context of a small community of developers due to its relatively new prescence and light corporate backing (also maybe a benefit?)
 
 ## Ideal use cases of Vue.js
-Ideal use cases of Vue.js include, but are not limited to; Single-Page applications, responsive web application, or small web components that can be introduced into larger monolithic applications
+Because Vue.js is a progressive framework and is incrementally adoptable, one great use case is the modernization of a legacy application that could be retired gracefully piece by piece as each piece is replaced by its Vue counterpart. Its easy to envision a scenario where a larger monolithic Angular applications is replaced by performant and effeciently designed web components in an exciting setting that allows newer developers to work alongside legacy developers and knowledge share along the way as each piece is retired in isolation. In my opinion this is the ideal use case of Vue.js, however it is strongly suited to power complex Single-page applications when used in conjuction with companion libraries and modern tooling like webpack.
 
 ## In conclusion, and best use cases for each library
-In conclusion...Each of these powerful frameworks has a unique set of benefits and drawbacks. Based on the unique demands of the project and preferences of the developers on the team a compelling case can be made
-for using each library.
+In conclusion, each of these powerful frameworks has a unique set of benefits and drawbacks. Based on the unique demands of the project and preferences of the developers on the team a compelling case can be made for using each library.
 
 ## Resources
 https://vuejs.org/  
