@@ -22,8 +22,8 @@ Often times, these on-screen elements need to communicate with the browser or th
 ```Activate Lasers```
 ```</button> ```
 
-Initial released on May 29, 2013.  
-Developed by Facebook 
+Initially release on May 29, 2013.  
+Developed by Facebook.   
 
 ## Drawbacks of React
 Some drawbacks of React include small optimization problems and also barriers to entry that may inhibit certain developers. In terms of optimization, when a React component's state changes, it triggers the re-render of the entire component sub-tree, starting at that component as root. This is especially painful in components with large sub-trees that require the library to perform a diff, element by element, looking for changes that may not even be there. Although this is not prevelant in all applications, some developers maintain components with very small sub-trees. This is not always an easy task and requires some design thinking along the way of component development. This furthers the theory that React overall has a javascript-centric approach versus a template-centric approach like Vue, resulting in a library the demands more upfront knowledge of essential javascript from its developers. This may prohibit a more widespread adoption of the library.
@@ -32,14 +32,13 @@ Some drawbacks of React include small optimization problems and also barriers to
 Ideal use cases of React include mobile application with React native, web development with React and Redux, and virtual reality websites and 360 experiences using React VR. 
 
 ## Key benefits and features of Vue.js
-Incrementally adoptable architecture that focuses on declarative rendering and component composition.  
-Initial released in February 2014. 
+Described as a progressive framework, Vue.js is a relatively small JavaScript library that can be incorporated into existing projects incrementally as needed. The small and lightweight architecture of Vue is a design choice that is beneficial for developers because they are able to sprinkle in the effeciencies and dynamic front-end features without starting over. Vue.js is an incrementally adoptable architecture that focuses on declarative rendering and component composition. Here lies one of the key differences between React and Vue, where React uses a function design with regard to components, Vue implements a declarative design. This is in itself, also a unique design decision that embraces the go forward approach of ES lent6. In Vue, Components are created using the following syntax:
 
-Vue is described as a progressive framework, meaning it can be incorporated into existing projects incrementally as needed. This is beneficial for developers because they are able to sprinkle in the
-effeciencies and dynamic front-end features of vue without starting over from scratch. //TODO this is from class, expand on this with more evidence
 
-Vue is driven entirely by the open source community, whereas Angular and React have a significant share of Google and Facebook employees contributing to the repositories. //TODO more research here  
-Low barrier to entry due to it being a template-centric library 
+
+Vue is driven entirely by the open source community, whereas Angular and React have a significant share of Google and Facebook employees contributing to the repositories. //TODO more research here. Vue also tends toward more usage among the entirety of the pool of developes becase of its low barrier to entry due to it being a template-centric library.
+Initially released in February 2014.  
+Developed by Evan You.    
 
 ## Drawbacks of Vue.js
 One drawback of Vue.js is that it operates withing the context of a small community of developers due to its relatively new prescence and light corporate backing (also maybe a benefit?)
