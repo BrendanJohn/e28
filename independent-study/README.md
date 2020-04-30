@@ -1,8 +1,8 @@
-# React & Vue.js: A Comparison of Key Features, Benefits, Drawbacks, & Essential Use Cases  
+# React & Vue.js: A Comparison of Key Features, Benefits, Drawbacks & Essential Use Cases  
 *By Brendan Murphy*
 
 ## Common features of React and Vue.js
-React and Vue.js are powerful JavaScript frameworks that are primarily used in modern front-end application development and share many common features. They share similar design philosophies and are so closely related that they require companion frameworks and libraries for the some of the exact same tasks. Surprisingly, this was a design <em>choice</em> as it allowed the developers time to focus on their own core libraries. These two frameworks represent an incremental step forward in the evolution of JavaScript as they both incorporate a data-driven, declarative style that provides reactive and composable view components. A component is a user-defined HTML element with its own uniquely defined behavior and template that can be reused infinitely within an application. Components accept input data in the form of props and are reactive in the sense that they re-render data changes on screen with no page reload experience for the user. This component-driven design choice empowers developers to focus on the logic of the application in isolation over the mechanics of how DOM interactions take place. These powerful libraries have many compelling use cases and some drawbacks and are almost equal in their adoptability. As closely linked as these libraries are, Vue's template-centric design and ease with which it can be brought into existing applications give it the slightest edge over React.
+React and Vue.js are powerful JavaScript frameworks that are primarily used in modern front-end application development and share many common features. They share similar design philosophies and are so closely related that they require companion frameworks and libraries for the some of the exact same tasks. Surprisingly, this was a design <em>choice</em> as it allowed the developers time to focus on their own core libraries. These two frameworks represent an incremental step forward in the evolution of JavaScript as they both incorporate a data-driven, declarative style that provides reactive and composable view components. A component is a user-defined HTML element with its own uniquely defined behavior and template that can be reused infinitely within an application. Components accept input data in the form of props and are reactive in the sense that they re-render data changes on screen with no page reload experience for the user. This component-driven design choice empowers developers to focus on the logic of the application in isolation over the mechanics of how DOM interactions take place. These powerful libraries have many compelling use cases and some drawbacks, and are almost equal in their adoptability. As closely linked as these libraries are, Vue's template-centric design and ease with which it can be brought into existing applications give it the slightest edge over React.
 
 ## Key benefits and features of React
 React is a JavaScript framework that is used as a base in the development of single-page applications and native mobile applications. React is only concerned with rendering data to the DOM, therefore creating React applications requires the use of additional frameworks for things like state management and routing. This open reliance on outside frameworks is a design feature and lends itself to the idea that React is more of a library than a framework. Developing in React introduces users to a hybrid XML/HTML syntax that describes what the UI should look like. Meet JSX, a syntax extension of JavaScript that the developers of React recommend to produce React "elements" (not to be confused with components). These elements are the building blocks of React components and are declared like this:   
@@ -15,16 +15,16 @@ Much like Vue.js, React makes extensive use of small, reusable pieces of code ca
 ```return <h1>Hello, {props.name}</h1>;```
 ```} ```
 
-The key to understanding React components is to imagine them as JavaScript functions that accept inputs called props and return React elements that describe what should appear on the screen.  
-Often, these on-screen elements will need to communicate with the browser or their parent web component. This is achieved through a system of event handling that calls JSX to pass a function as the event handler rather than a string, which is typically seen in HTML on-click handlers. React's event handling system looks like this:
+The key to understanding React components is to imagine them as JavaScript functions that accept inputs called props and return React elements that describe what should appear on the screen.   
+Often, these on-screen elements will need to communicate with the browser or their parent web component. This is achieved through a system of event-handling that calls JSX to pass a function as the event handler rather than a string, which is typically seen in HTML on-click handlers. React's event handling system looks like this:
 
 ``` <button onClick={activateLasers}>```
 ```Activate Lasers```
 ```</button> ```
 
-These lightweight components can be glued together with other React features like React native and React VR to power unique Single Page Applications that are both performant and reactive.
+These lightweight components can be glued together with other React features like React native and React Virtual Reality to power unique single-page applications that are both performant and reactive.
 
-Initially release on May 29, 2013.  
+Initially released on May 29, 2013.  
 Developed by Facebook.   
 
 ## Drawbacks of React
