@@ -70,7 +70,7 @@ Due to its relatively new presence and light corporate backing, one criticism of
 Because Vue.js is an incrementally adoptable, progressive framework, one powerful use case is the modernization of a legacy application. Ideally it could be retired gracefully, piece by piece as each element is replaced by a Vue counterpart. It is not hard to envision a scenario where a large monolithic Angular application is replaced by performant and efficiently designed web components in an exciting setting that allows newer developers to work alongside legacy developers, knowledge sharing along the way as each piece is retired in isolation. In my opinion this is the ideal use case of Vue.js, however it is also well-suited to power complex single-page applications when used in conjunction with companion libraries and modern tooling like webpack and Vuex.
 
 ## In conclusion, intelligently designed frameworks that can live alongside each other
-Each of these powerful frameworks have a unique set of benefits and drawbacks. Based on the unique demands of a particular project and preferences of developers on the team, a compelling case can be made for using either framework. While studying each of these similar frameworks, it occurred to me that the widespread adoption of web components may be the most impactful aspect of each library. During this study I discovered a fast and lightweight component library called LitElement that is created by the Polymer Project and is in itself a very lightweight component library that works well in the context of both Vue and React. Its own lightweight modularity furthers the design principles of Vue and its incremental adoptability in the form of Polymer Web Components. This underscores the lasting impact of Vue.js and React, where the most powerful aspect of a given framework or tool can be its ease of use and adoptability in many different use cases.
+Each of these powerful frameworks have a unique set of benefits and drawbacks. Based on the unique demands of a particular project and preferences of developers on the team, a compelling case can be made for using either framework. If a team of developer were trying to build a native application from the ground up, or perhaps a virtual reality experience unlike any other, React is the obvious choice. However, for the wider pool of developers with varying skill set, Vue's ease of use, beginner-friendly design, and incrementally adoptable nature make it the stronger framework.
 
 ## Resources  
 https://vuejs.org/  
@@ -85,7 +85,6 @@ https://app.pluralsight.com/library/courses/vuejs-fundamentals/table-of-contents
 https://www.monterail.com/blog/vue-vs-react-2019  
 https://www.codeinwp.com/blog/angular-vs-vue-vs-react/  
 https://medium.com/@ronak8036/pros-and-cons-of-the-vue-js-framework-8015dcbc05ef
-https://www.polymer-project.org/  
 
 
 
