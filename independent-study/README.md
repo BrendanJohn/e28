@@ -1,4 +1,4 @@
-# React and Vue.js: A Comparison of Key Features, Benefits, Drawbacks, and Essential Use Cases  
+# React & Vue.js: A Comparison of Key Features, Benefits, Drawbacks, & Essential Use Cases  
 *By Brendan Murphy*
 
 ## Common features of React and Vue.js
