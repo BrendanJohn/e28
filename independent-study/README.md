@@ -1,4 +1,5 @@
 # React and Vue.js: A Comparison of Key Features and Benefits, Drawbacks, and Essential Use Cases  
+*By Brendan Murphy*
 
 ## Common features of React and Vue.js
 React and Vue.js are powerful JavaScript frameworks that are primarily used in modern front-end application development. These frameworks represent an incremental step forward in the evolution of JavaScript where they incororate a data-driven, declaritve style that provides reactive and composable view components. A component is a user-defined HTML element with its own uniquely defined behavior and template that can be used over and over again within an application. Components accept input data in the form of props and are reactive in the sense that they re-render data changes on screen with no page reload experience for the user. This component-driven design choice empowers developers to focus on the logic of the application in isolation over the mechanics of how DOM interactions take place. Each of these frameworks focuses primarily on their own core library, with concerns such as routing and state management handled by companion frameworks and libraries.  
