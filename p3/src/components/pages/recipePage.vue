@@ -37,7 +37,9 @@ export default {
     props: ['slug'],
     data: function() {
         return {
-            addAlert: false
+            addAlert: false,
+            favoriteRecipes: [],
+            added: ''
         };
     },
     computed: {

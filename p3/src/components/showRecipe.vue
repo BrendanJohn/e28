@@ -17,7 +17,7 @@ export default {
         imageSrc: function() {
             try {
                 return require('@/assets/images/recipes/' +
-                    this.recipes.slug +
+                    this.recipe.slug +
                     '.jpg');
             } catch (e) {
                 return require('@/assets/images/recipes/image-not-available.jpg');

@@ -31,7 +31,7 @@ export default {
         this.items = this.cart.getItems();
     },
     methods: {
-        getRecipesDetails(slug) {
+        getRecipeDetails(slug) {
             for (let key of Object.keys(this.recipes)) {
                 if (this.recipes[key].slug == slug) {
                     return this.recipes[key];
