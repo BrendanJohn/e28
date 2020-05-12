@@ -8,30 +8,33 @@
 </template>
 
 <script>
-import * as app from '@/common/app.js'
 export default {
     name: '',
     props: ['category'],
     data: function() {
         return {
-            recipes: [],
-            featuredRecipes: ''
         };
     },
-    watch: {
-        recipes: function() {
-            function isMatch(recipe) {
-                return recipe.categories.includes(this);
-            }
-            this.featuredRecipes = Object.values(this.recipes).filter(isMatch, this.category);
-        }
-    },
-    mounted: function() {
-        app.api.all('recipes')
-            .then(response =>  {
-                this.recipes = response;
+    computed: {
+        featuredRecipes: function() {
+            let featuredRecipes = [];
+            // Iterate through all our products
+            Object.keys(this.recipes).map(key => {
+                // If this product includes the category we're filtering for...
+                if (
+                    this.recipes[key].categories &&
+                    this.recipes[key].categories.includes(this.category)
+                ) {
+                    // Add it to our featuredProducts array
+                    featuredRecipes.push(this.recipes[key]);
+                }
             });
-   }
+            return featuredRecipes;
+        },
+        recipes: function() {
+            return this.$store.state.recipes;
+        }
+    }
 }
 </script>
 

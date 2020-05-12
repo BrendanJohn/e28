@@ -9,23 +9,22 @@
 
 <script>
 export default {
-    name: '',
     props: ['recipe'],
     data: function() {
-        return {
-        };
+        return {};
     },
     computed: {
         imageSrc: function() {
             try {
-                return require('@/assets/images/recipes/' + this.recipe.slug + '.jpg');
-            }
-            catch (e) {
-                return require('@/assets/images/recipes/image-not-available.jpg'); 
+                return require('@/assets/images/recipes/' +
+                    this.recipes.slug +
+                    '.jpg');
+            } catch (e) {
+                return require('@/assets/images/recipes/image-not-available.jpg');
             }
         }
     }
-}
+};
 </script>
 
 <style scoped>

@@ -4,13 +4,13 @@
 
         <div v-if='items.length == 0'>No items</div>
 
-        <ul class='cleanList' v-if='Object.keys(products).length > 0' data-test='cart-contents'>
+        <ul class='cleanList' v-if='Object.keys(recipes).length > 0' data-test='cart-contents'>
             <li v-for='item in items' :key='item.slug'>
                 <button
                     data-test='remove-from-cart-button'
                     @click='removeFromCart(item.slug, item.quantity)'
                 >Remove</button>
-                {{ item.quantity }} x {{ getProductDetails(item.slug).name }}
+                {{ item.quantity }} x {{ getRecipeDetails(item.slug).name }}
             </li>
         </ul>
     </div>
@@ -31,10 +31,10 @@ export default {
         this.items = this.cart.getItems();
     },
     methods: {
-        getProductDetails(slug) {
-            for (let key of Object.keys(this.products)) {
-                if (this.products[key].slug == slug) {
-                    return this.products[key];
+        getRecipesDetails(slug) {
+            for (let key of Object.keys(this.recipes)) {
+                if (this.recipes[key].slug == slug) {
+                    return this.recipes[key];
                 }
             }
         },
@@ -45,8 +45,8 @@ export default {
         }
     },
     computed: {
-        products: function() {
-            return this.$store.state.products;
+        recipes: function() {
+            return this.$store.state.recipes;
         }
     }
 };

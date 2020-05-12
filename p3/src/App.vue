@@ -29,6 +29,7 @@ export default {
     mounted: function() {
         this.cart = new app.Cart();
         this.$store.commit('setCartCount', this.cart.count());
+        this.$store.dispatch('setRecipes');
     },
     computed: {
         cartCount: function() {

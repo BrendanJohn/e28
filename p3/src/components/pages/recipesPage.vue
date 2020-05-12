@@ -11,24 +11,20 @@
 
 <script>
 import ShowRecipe from '@/components/showRecipe.vue'
-import * as app from '@/common/app.js'
 export default {
     name: '',
     components: {
         'show-recipe': ShowRecipe
     },
-    props: [],
     data: function() {
         return {
-            recipes: []
         };
     },
-    mounted: function() {
-        app.api.all('recipes')
-            .then(response =>  {
-                this.recipes = response;
-            });
-   }
+    computed: {
+        recipes: function() {
+            return this.$store.state.recipes;
+        }
+    }
 }
 </script>
 

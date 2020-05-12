@@ -37,20 +37,22 @@ export default {
     props: ['slug'],
     data: function() {
         return {
-            recipe: {},
-            favoriteRecipes: [],
-            added: '',
             addAlert: false
         };
     },
-    mounted: function () {
-        if (localStorage.getItem('favoriteRecipes')) {
-            this.favoriteRecipes.push(localStorage.getItem('favoriteRecipes'));
+    computed: {
+        recipe() {
+            return this.$store.getters.getRecipeBySlug(this.slug);
+        },
+        imageSrc: function() {
+            try {
+                return require('@/assets/images/recipes/' +
+                    this.recipe.slug +
+                    '.jpg');
+            } catch (e) {
+                return require('@/assets/images/recipes/image-not-available.jpg');
+            }
         }
-        app.api.find('recipes', 'slug', this.slug)
-            .then(response =>  {
-                this.recipe = response;
-        });
     },
     methods: {
         addFavoriteRecipe: function() {
@@ -71,17 +73,6 @@ export default {
             setTimeout(() => (this.addAlert = false), 3000);
         }
         
-    },
-    computed: {
-        imageSrc: function() {
-            try {
-                return require('@/assets/images/recipes/' + this.slug + '.jpg');
-            }
-            catch (e) {
-                return require('@/assets/images/recipes/image-not-available.jpg'); 
-            }
-        },
-
     }
 };
 </script>
