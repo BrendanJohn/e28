@@ -28,6 +28,7 @@ export default {
     },
     mounted: function() {
         this.cart = new app.Cart();
+        this.$store.commit('setCartCount', this.cart.count());
     },
     computed: {
         cartCount: function() {

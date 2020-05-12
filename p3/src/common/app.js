@@ -7,6 +7,8 @@ export const config = {
     }
 }
 
+export { default as Cart } from '@/common/cart.js';
+
 export const api = new Api({
     apiKey: config.firebase.apiKey,
     projectId: config.firebase.projectId

@@ -8,6 +8,7 @@ import CategoriesPage from '@/components/pages/categoriesPage.vue'
 import RecipesPage from '@/components/pages/recipesPage.vue'
 import FavoritesPage from '@/components/pages/favoritesPage.vue'
 import store from '@/common/store'
+import CartPage from '@/components/pages/cartPage.vue'
 
 Vue.use(VueRouter);
 
@@ -20,7 +21,8 @@ const routes = [
   {path: '/categories', component: CategoriesPage, name: 'categories'},
   {path: '/recipe/:slug', component: RecipePage, name: 'recipe', props: true},
   {path: '/recipes/create', component: AddARecipe, name: 'add a recipe'},
-  {path: '/favorites', component: FavoritesPage, name: 'favorites'}
+  {path: '/favorites', component: FavoritesPage, name: 'favorites'},
+  {path: '/cart', component: CartPage, name: 'cart'},
 ]
 
 const router = new VueRouter({
