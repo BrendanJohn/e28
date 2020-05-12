@@ -2,7 +2,10 @@
     <div id='cart-page'>
         <h1>Your Cart</h1>
 
-        <div v-if='items.length == 0'>No items</div>
+        <div v-if='items.length == 0'>
+            <p>Looks like you don't have any recipes added to your cart yet, why not visit the recipes page and find one?</p>
+            <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>
+        </div>
 
         <ul class='cleanList' v-if='Object.keys(recipes).length > 0' data-test='cart-contents'>
             <li v-for='item in items' :key='item.slug'>

@@ -14,7 +14,7 @@
         <p class='output'>Output: {{ recipe.output }} liters</p>
         <p class='brewtime'>Total brew time: {{ recipe.totalBrewTime }}</p>
         <p><button @click.prevent="addFavoriteRecipe">Save to favorites</button></p>
-        <button @click='addToCart(slug)' data-test='add-to-cart-button'>Add to cart</button>
+        <button @click='addToCart(slug)' data-test='add-to-cart-button'>Add recipe kit to cart</button>
                 <transition name='fade'>
             <div
                 data-test='add-to-cart-confirmation'

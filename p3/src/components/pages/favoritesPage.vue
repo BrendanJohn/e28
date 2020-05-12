@@ -10,7 +10,7 @@
         ></show-favorite>
     </div>
     <div v-else>
-        <p>Looks like you don't have any favorites yet, why not visit the recipes page and find one</p>
+        <p>Looks like you don't have any favorites yet, why not visit the recipes page and find one?</p>
         <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>
     </div>
     </div>
