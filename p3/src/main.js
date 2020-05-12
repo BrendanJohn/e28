@@ -7,6 +7,7 @@ import RecipePage from '@/components/pages/recipePage.vue'
 import CategoriesPage from '@/components/pages/categoriesPage.vue'
 import RecipesPage from '@/components/pages/recipesPage.vue'
 import FavoritesPage from '@/components/pages/favoritesPage.vue'
+import store from '@/common/store'
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,7 @@ const router = new VueRouter({
 })
 
 new Vue({
+  store: store,
   router: router, 
   render: h => h(App),
 }).$mount('#app')
