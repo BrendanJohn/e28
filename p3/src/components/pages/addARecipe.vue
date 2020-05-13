@@ -66,7 +66,6 @@ export default {
     methods: {
         addRecipe: function () {
             app.api.add('recipes', this.recipe).then(id => {
-                console.log('recipe was added with the id: ' + id);
                 this.added = true;
                 setTimeout(() => (this.added = false), 3000);
                 this.recipe = {
