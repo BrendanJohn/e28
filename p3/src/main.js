@@ -9,9 +9,11 @@ import RecipesPage from '@/components/pages/recipesPage.vue'
 import FavoritesPage from '@/components/pages/favoritesPage.vue'
 import store from '@/common/store'
 import CartPage from '@/components/pages/cartPage.vue'
+import Vuelidate from 'vuelidate'
+
 
 Vue.use(VueRouter);
-
+Vue.use(Vuelidate);
 Vue.config.productionTip = false
 
 //named routes are a good way to remove redundancy
