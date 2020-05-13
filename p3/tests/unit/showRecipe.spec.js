@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, RouterLinkStub } from '@vue/test-utils'
 import showRecipe from '@/components/showRecipe.vue'
 
 describe('showRecipe.vue', () => {
@@ -18,8 +18,14 @@ describe('showRecipe.vue', () => {
       totalBrewTime: "10 -14 days"
     }
     const wrapper = shallowMount(showRecipe, {
-      propsData: { recipe }
+      propsData: { recipe },
+      stubs: {
+        RouterLink: RouterLinkStub
+      }
     })
-    expect(wrapper.text()).to.include(recipe.name)
+    expect(wrapper.text()).to.include(recipe.name);
+    //using data-test is a good way to remind other developers that the class is there specifically for testing purposes
+    let foundProductLinkm = wrapper.find('[data-test="product-link"]').exists();
+    expect(foundProductLinkm).to.equal(true);
   })
 })
