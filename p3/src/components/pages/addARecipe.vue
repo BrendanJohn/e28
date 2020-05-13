@@ -66,21 +66,23 @@ export default {
     methods: {
         addRecipe: function () {
             app.api.add('recipes', this.recipe).then(id => {
+                if (id !== null) {
                 this.added = true;
                 setTimeout(() => (this.added = false), 3000);
+                }
                 this.recipe = {
-                name: '',
-                slug: '',
-                description: '',
-                ingredientOne: '',
-                ingredientTwo: '',
-                ingredientThree: '',
-                ingredientFour: '',
-                directions: '',
-                totalBrewTime: '',
-                output: '',
-                favorite: false,
-                added: false
+                    name: '',
+                    slug: '',
+                    description: '',
+                    ingredientOne: '',
+                    ingredientTwo: '',
+                    ingredientThree: '',
+                    ingredientFour: '',
+                    directions: '',
+                    totalBrewTime: '',
+                    output: '',
+                    favorite: false,
+                    added: false
                 }
             })
         }
