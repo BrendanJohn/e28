@@ -5,7 +5,9 @@
             <ul>
                 <li v-for='link in links' :key='link'>
                     <router-link :to='{ name: link }' exact>{{ link }}
-                        <span v-if='link == "cart"'>({{cartCount}})</span>
+                        <span 
+                            data-test='cart-count'
+                            v-if='link == "cart"'>({{cartCount}})</span>
                     </router-link>
                 </li>
             </ul>

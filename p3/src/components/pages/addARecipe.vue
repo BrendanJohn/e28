@@ -5,7 +5,8 @@
         <div id='inputs'>
             <label for='name'>Name</label>
             <input 
-                type='text' 
+                type='text'
+                data-test='recipe-name-input'
                 v-model='$v.recipe.name.$model' 
                 id='name' 
                 :class='{ "form-input-error": $v.recipe.name.$error}'
@@ -17,7 +18,8 @@
 
             <label for='slug'>URL Identifier:</label>
             <input 
-                type='text' 
+                type='text'
+                data-test='recipe-slug-input' 
                 v-model='$v.recipe.slug.$model' 
                 id='slug'
                 :class='{ "form-input-error": $v.recipe.slug.$error}'
@@ -36,6 +38,7 @@
             <textarea  
                 v-model='$v.recipe.description.$model' 
                 id='description'
+                data-test='recipe-description-textarea'
                 :class='{ "form-input-error": $v.recipe.description.$error}'
             ></textarea>
 
@@ -47,7 +50,12 @@
             <small class='form-help'>Minimum 25 characters</small>
 
             <label for='ingredientOne'>Ingredient One:</label>
-            <input type='text' v-model='recipe.ingredientOne' id='ingredientOne' />
+            <input 
+                type='text'
+                data-test='recipe-ingredientOne-input' 
+                v-model='recipe.ingredientOne' 
+                id='ingredientOne' 
+            />
 
             <label for='ingredientTwo'>Ingredient Two:</label>
             <input type='text' v-model='recipe.ingredientTwo' id='ingredientTwo' />
@@ -77,11 +85,15 @@
             <label for='stout'>Stout</label>
             <input type='checkbox' id='stout' value='stout' v-model='recipe.categories'>  
         </div>
-        <button @click.prevent='addRecipe'>Add recipe</button>
+        <button data-test='add-recipe-button' @click.prevent='addRecipe'>Add recipe</button>
         <div class='form-feedback-error' v-if='$v.$anyError'>Please correct the above errors</div>
 
         <transition name='fade'>
-            <div class='alert' v-if='added'>Your recipe was added!</div>
+            <div
+                data-test='recipe-added-confirmation'
+                class='alert'
+                v-if='added'
+            >Your recipe {{ addedName }} was added!</div>
         </transition>
     </div>
 </template>
@@ -95,6 +107,7 @@ export default {
     data: function() {
         return {
             added: false,
+            addedName: '',
             recipe: {
                 name: '',
                 slug: '',
@@ -107,7 +120,6 @@ export default {
                 totalBrewTime: '',
                 output: '',
                 favorite: false,
-                added: false,
                 categories: []
             }
         };
@@ -136,26 +148,30 @@ export default {
             this.$v.$touch();
             // Only add the product if we don't have any errors
             if (this.$v.$anyError == false) {
-                app.api.add('recipes', this.recipe).then(id => {
-                    if (id !== null) {
-                    this.added = true;
-                    setTimeout(() => (this.added = false), 3000);
+                app.api.add('recipes', this.recipe).then(response => {
+                   if (response.includes('Error')) {
+                        alert(response);
+                    } else {
+                        //resets validation
+                        this.$v.$reset();
+                        this.added = true;
+                        setTimeout(() => (this.added = false), 3000);
+                        this.recipe = {
+                            name: '',
+                            slug: '',
+                            description: '',
+                            ingredientOne: '',
+                            ingredientTwo: '',
+                            ingredientThree: '',
+                            ingredientFour: '',
+                            directions: '',
+                            totalBrewTime: '',
+                            output: '',
+                            favorite: false,
+                            categories: []
+                        }
                     }
-                    this.recipe = {
-                        name: '',
-                        slug: '',
-                        description: '',
-                        ingredientOne: '',
-                        ingredientTwo: '',
-                        ingredientThree: '',
-                        ingredientFour: '',
-                        directions: '',
-                        totalBrewTime: '',
-                        output: '',
-                        favorite: false,
-                        added: false,
-                        categories: []
-                    }
+
                 })
             }
         }  
