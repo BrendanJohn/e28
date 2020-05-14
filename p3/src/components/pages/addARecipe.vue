@@ -75,15 +75,19 @@
             <label for='output'>Output (in liters):</label>
             <input type='number' v-model='recipe.output' id='output' />
 
-            <label> Categories, choose all that apply</label>
-            <label for='paleAle'>Pale Ale</label>
-            <input type='checkbox' id='paleAle' value='paleAle' v-model='recipe.categories'>
-
-            <label for='ipa'>IPA</label>
-            <input type='checkbox' id='ipa' value='ipa' v-model='recipe.categories'>
-
-            <label for='stout'>Stout</label>
-            <input type='checkbox' id='stout' value='stout' v-model='recipe.categories'>  
+            <label> Categories (choose all that apply)</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type='checkbox' id='paleAle' value='paleAle' v-model='recipe.categories'>
+                <label  class="form-check-label" for='paleAle'> Pale Ale </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <label  class="form-check-label" for='ipa'> IPA </label>
+                <input class="form-check-input" type="checkbox" id='ipa' value='ipa' v-model='recipe.categories'>
+            </div>
+            <div class="form-check form-check-inline">
+                <label  class="form-check-label" for='stout'> Stout </label>
+                <input class="form-check-input" type="checkbox" id='stout' value='stout' v-model='recipe.categories'> 
+            </div>
         </div>
         <button data-test='add-recipe-button' @click.prevent='addRecipe'>Add recipe</button>
         <div class='form-feedback-error' v-if='$v.$anyError'>Please correct the above errors</div>
