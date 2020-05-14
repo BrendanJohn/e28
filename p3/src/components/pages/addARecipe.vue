@@ -78,8 +78,8 @@
 
             <label> Categories (choose all that apply)</label>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type='checkbox' id='paleAle' value='paleAle' v-model='recipe.categories'>
                 <label  class="form-check-label" for='paleAle'> Pale Ale </label>
+                <input class="form-check-input" type='checkbox' id='paleAle' value='paleAle' v-model='recipe.categories'>
             </div>
             <div class="form-check form-check-inline">
                 <label  class="form-check-label" for='ipa'> IPA </label>

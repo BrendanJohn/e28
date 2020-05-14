@@ -226,8 +226,12 @@ label {
     display: block;
     font-size: 1.5rem;
     text-transform: uppercase;
-    margin: 20px 0 5px 0;
+    margin-top: 15px;
     font-weight: bold;
+}
+#stout, #ipa, #paleAle {
+    margin-top: 15px;
+    margin-left: 15px;
 }
 
 input[type=text],
