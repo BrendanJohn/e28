@@ -7,7 +7,7 @@ describe('Brendans Ale House homepage', () => {
   })
 
   it('Shows all the recipes', () => {
-    //act
+    //act 
     cy.visit('/recipes')
     //assert
     cy.contains('h1', 'All Recipes')
