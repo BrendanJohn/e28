@@ -67,6 +67,38 @@ describe('Brendans Ale House cart page', () => {
     })
   })
 
+  describe('Brendans Ale House favorites page', () => {
+
+    // Test recipe
+    let recipe = {
+        name: 'English Style Bitter',
+        slug: 'english-style-bitter'
+    }
+  
+    it('adds and removes from favorites', () => {
+  
+        // Add to favorites from recipe page
+        cy.visit('/recipe/' + recipe.slug);
+        cy.clearLocalStorage()
+        cy.wait(1000)
+        //assert
+        cy.get('[data-test="add-to-favorites-button"]').click().should(() => {
+          expect(localStorage.getItem('favoriteRecipes')).to.eq(recipe.slug)
+        })
+        cy.get('[data-test="add-to-favorites-confirmation"]').should('exist');
+  
+        // Confirm favorites shows recipe
+        cy.visit('/favorites');
+        cy.contains('[data-test="favorite-contents"]', 'English Style Bitter');
+  
+        // Remove from favorites 
+        //assert
+        cy.get('[data-test="remove-from-cart-button"]').click().should(() => {
+          expect(localStorage.getItem('favoriteRecipes')).to.eq('')
+        })
+    })
+  })
+
   
   describe('Brendans Ale House cart create recipe page', () => {
 
@@ -91,3 +123,5 @@ describe('Brendans Ale House cart page', () => {
         cy.contains('[data-test="beer-recipe-name"]', recipe.name)
     });
 })
+
+

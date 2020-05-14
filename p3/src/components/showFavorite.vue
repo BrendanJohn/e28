@@ -1,9 +1,9 @@
 <template>
     <router-link :to="{ name: 'recipe', params: {slug: recipe.slug}}">
     <div class='recipe'>
-        <div class='recipe-name'>{{ recipe.name }}</div>
+        <div data-test='favorite-contents' class='recipe-name'>{{ recipe.name }}</div>
         <img class='recipe-thumb' :src='imageSrc' />
-        <p><button @click.prevent="$emit('remove-recipe', recipe.slug)">Remove from favorites</button></p>
+        <p><button data-test='remove-from-cart-button' @click.prevent="$emit('remove-recipe', recipe.slug)">Remove from favorites</button></p>
         <transition name='fade'>
             <div class='alert' v-if='removed'>Your recipe was removed from favorites!</div>
         </transition>

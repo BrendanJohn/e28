@@ -1,7 +1,7 @@
 <template>
     <div id='recipes'>
         <h2>My Favorite Recipes</h2>
-    <div v-if='hasFavorites'>
+    <div v-if='hasFavorites' >
         <show-favorite
             v-on:remove-recipe='removeRecipe($event)'
             v-for='recipe in recipes'

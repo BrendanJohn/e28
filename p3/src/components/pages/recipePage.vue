@@ -13,9 +13,9 @@
         <p class='directions'>{{ recipe.directions }}</p>
         <p class='output'>Output: {{ recipe.output }} liters</p>
         <p class='brewtime'>Total brew time: {{ recipe.totalBrewTime }}</p>
-        <p><button @click.prevent="addFavoriteRecipe">Save to favorites</button></p>
+        <button @click='addFavoriteRecipe' data-test='add-to-favorites-button'>Save to favorites</button>
         <button @click='addToCart(slug)' data-test='add-to-cart-button'>Add recipe kit to cart</button>
-                <transition name='fade'>
+        <transition name='fade'>
             <div
                 data-test='add-to-cart-confirmation'
                 class='alert'
@@ -23,7 +23,10 @@
             >Your cart has been updated!</div>
         </transition>
         <transition name='fade'>
-            <div class='alert' v-if='added'>Your recipe was added!</div>
+            <div 
+                data-test='add-to-favorites-confirmation'
+                class='alert' 
+                v-if='added'>Your recipe was added!</div>
         </transition>
         <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>
     </div>
@@ -72,6 +75,7 @@ export default {
         checkIfAdded: function () {
             if (localStorage.getItem('favoriteRecipes').includes(this.recipe.slug)) {
                 this.added = true;
+                setTimeout(() => (this.added = false), 3000);
             }
         },
         addToCart: function(slug) {
