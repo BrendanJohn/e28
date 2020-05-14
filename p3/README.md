@@ -1,5 +1,5 @@
 
-# Project 3
+# Project 3: Vuex, validation, testing, static hosting
 + Brendans Ale House
 + By: Brendan Murphy
 + Production URL: <http://e28p3.brendanmurph.com>
