@@ -67,9 +67,17 @@ header {
     margin-top: 20px;
 }
 
+.header-container {
+    margin-bottom: 20px;
+}
+
 #logo {
     /* Actual width is 636; displaying at half-size for retina screens */
     width: 318px;
+}
+
+nav  {
+    padding: 25px;
 }
 
 nav ul {
@@ -148,6 +156,7 @@ PAGE SPECIFIC
     background-color: #90EE90;
     border-radius: $radius;
     padding: 10px;
+    margin: 20px;
 }
 
 #recipe-page {
@@ -176,6 +185,12 @@ MISC
 .cleanList {
     list-style-type: none;
     padding: 0;
+    margin-bottom: 1rem;
+    
+}
+
+.highlight {
+    background-color: #f7f7f9;
 }
 
 .alert {
@@ -211,6 +226,7 @@ label {
     display: block;
     font-size: 1.5rem;
     text-transform: uppercase;
+    margin: 20px 0 5px 0;
     font-weight: bold;
 }
 

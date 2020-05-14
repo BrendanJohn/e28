@@ -5,6 +5,8 @@
 + Production URL: <http://e28p3.brendanmurph.com>
 
 ## Outside resources
+Bootstrap for styling and layouts  
+https://getbootstrap.com/  
 American Pale Ale recipe  
 https://www.seriouseats.com/recipes/2011/01/homebrewing-pale-ale-for-beginners-extract.html  
 American Pale Ale image  

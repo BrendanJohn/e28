@@ -3,14 +3,14 @@ describe('Brendans Ale House homepage', () => {
       //act
       cy.visit('/')
       //assert
-      cy.contains('h2', 'This Weeks Featured Recipes')
+      cy.contains('h2', 'This Weeks Featured Recipe!')
   })
 
   it('Shows all the recipes', () => {
     //act
     cy.visit('/recipes')
     //assert
-    cy.contains('h2', 'All Recipes')
+    cy.contains('h1', 'All Recipes')
     cy.contains('[data-test="beer-recipe-name"]', 'English Style Bitter')
     //confirm that we get at least the 4 recipes plus and additional user created or test created recipes
     cy.get('[data-test="beer-recipe-name"]').its('length').should('be.gte',4);
@@ -27,14 +27,14 @@ describe('Brendans Ale House categories page', () => {
         //act
         cy.visit('/categories')
         //assert
-        cy.contains('h2', 'Categories')
+        cy.contains('h1', 'Categories')
     })
   
     it('Shows all the categories', () => {
       //act
       cy.visit('/categories')
       //assert
-      cy.contains('h2', 'Categories')
+      cy.contains('h1', 'Categories')
       cy.contains('[data-test="category-name"]', 'pale ale');
       // With seed data, we should have at least 9 categories
       cy.get('[data-test="category-name"]').its('length').should('be.gte', 9);

@@ -1,7 +1,8 @@
 <template>
     <div>
-        <h2>Add a Recipe</h2>
-
+        <div class="header-container">
+            <h1>Add a Recipe</h1>
+        </div>
         <div id='inputs'>
             <label for='name'>Name</label>
             <input 

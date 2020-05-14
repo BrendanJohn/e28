@@ -1,6 +1,6 @@
 <template>
     <div id='featured'>
-        <h2>This Weeks Featured Recipes</h2>
+        <h2>This Weeks Featured Recipe!</h2>
         <ul class='cleanList'>
             <li v-for='recipe in featuredRecipes' :key='recipe.id'>{{ recipe.name }}</li>
         </ul>

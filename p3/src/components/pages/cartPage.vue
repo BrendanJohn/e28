@@ -1,7 +1,8 @@
 <template>
     <div id='cart-page'>
-        <h1>Your Cart</h1>
-
+        <div class="header-container">
+            <h1>Your Cart</h1>
+        </div>
         <div v-if='items.length == 0'>
             <p>Looks like you don't have any recipes added to your cart yet, why not visit the recipes page and find one?</p>
             <router-link :to='{name: "recipes"}'>&larr; Return to all recipes</router-link>

@@ -1,12 +1,16 @@
 <template>
     <div>
-        <h2>Categories</h2>
-        <ul class='cleanList'>
-            <li 
-                data-test='category-name'
-                v-for='(category, id) in allCategories' :key='id'>{{ category }}
-            </li>
-        </ul>
+        <div class="header-container">
+            <h1>Categories Page</h1>
+        </div>
+        <div class="highlight">
+            <ul class='cleanList'>
+                <li 
+                    data-test='category-name'
+                    v-for='(category, id) in allCategories' :key='id'>{{ category }}
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 

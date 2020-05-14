@@ -1,6 +1,8 @@
 <template>
     <div id='recipes'>
-        <h2>All Recipes</h2>
+        <div class="header-container">
+            <h1>All Recipes</h1>
+        </div>
         <show-recipe
             v-for='recipe in recipes'
             :key='recipe.id'
