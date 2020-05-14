@@ -18,9 +18,31 @@ describe('Brendans Ale House homepage', () => {
     cy.get('[data-test="beer-recipe-name"]').contains('English Style Bitter').click();
     //assert - confirm the recipes page is showing the right recipe
     cy.contains('[data-test="beer-recipe-name"]', 'English Style Bitter')
+  });
+})
+
+
+describe('Brendans Ale House categories page', () => {
+    it('Visits the homepage and confirms categories are present', () => {
+        //act
+        cy.visit('/categories')
+        //assert
+        cy.contains('h2', 'Categories')
+    })
+  
+    it('Shows all the categories', () => {
+      //act
+      cy.visit('/categories')
+      //assert
+      cy.contains('h2', 'Categories')
+      cy.contains('[data-test="category-name"]', 'pale ale');
+      // With seed data, we should have at least 9 categories
+      cy.get('[data-test="category-name"]').its('length').should('be.gte', 9);
+    });
   })
 
-  describe('cart-page', () => {
+
+describe('Brendans Ale House cart page', () => {
 
     // Test recipe
     let recipe = {
@@ -45,7 +67,8 @@ describe('Brendans Ale House homepage', () => {
     })
   })
 
-  describe('create-recipe-page', () => {
+  
+  describe('Brendans Ale House cart create recipe page', () => {
 
     // Test recipe
     let recipe = {
@@ -67,6 +90,4 @@ describe('Brendans Ale House homepage', () => {
         cy.visit('/recipe/' + recipe.slug);
         cy.contains('[data-test="beer-recipe-name"]', recipe.name)
     });
-})
-
 })
