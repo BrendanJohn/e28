@@ -1,7 +1,7 @@
 <template>
-    <router-link data-test='product-link' :to="{ name: 'recipe', params: {slug: recipe.slug}}">
+    <router-link data-test='recipe-link' :to="{ name: 'recipe', params: {slug: recipe.slug}}">
     <div class='recipe'>
-        <div class='recipe-name'>{{ recipe.name }}</div>
+        <div data-test='beer-recipe-name' class='recipe-name'>{{ recipe.name }}</div>
         <img class='recipe-thumb' :src='imageSrc' />
     </div>
     </router-link>

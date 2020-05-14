@@ -1,6 +1,6 @@
 <template>
     <div id='recipe-page' v-if='recipe'>
-        <h1>{{ recipe.name }}</h1>
+        <h1 data-test='beer-recipe-name'>{{ recipe.name }}</h1>
         <img
             class='recipe-thumb'
             :alt='"recipe image of  " + recipe.name'

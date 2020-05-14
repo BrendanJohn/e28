@@ -25,7 +25,7 @@ describe('showRecipe.vue', () => {
     })
     expect(wrapper.text()).to.include(recipe.name);
     //using data-test is a good way to remind other developers that the class is there specifically for testing purposes
-    let foundProductLinkm = wrapper.find('[data-test="product-link"]').exists();
+    let foundProductLinkm = wrapper.find('[data-test="recipe-link"]').exists();
     expect(foundProductLinkm).to.equal(true);
   })
 })
