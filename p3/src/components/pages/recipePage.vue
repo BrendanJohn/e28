@@ -37,15 +37,13 @@ export default {
     props: ['slug'],
     data: function() {
         return {
+            recipe: {},
             addAlert: false,
             favoriteRecipes: [],
             added: ''
         };
     },
     computed: {
-        recipe() {
-            return this.$store.getters.getRecipeBySlug(this.slug);
-        },
         imageSrc: function() {
             try {
                 return require('@/assets/images/recipes/' +
@@ -55,6 +53,15 @@ export default {
                 return require('@/assets/images/recipes/image-not-available.jpg');
             }
         }
+    },
+    mounted: function () {
+        if (localStorage.getItem('favoriteRecipes')) {
+            this.favoriteRecipes.push(localStorage.getItem('favoriteRecipes'));
+        }
+        app.api.find('recipes', 'slug', this.slug)
+            .then(response =>  {
+                this.recipe = response;
+        });
     },
     methods: {
         addFavoriteRecipe: function() {
